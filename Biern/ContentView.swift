@@ -1,13 +1,21 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Hello, World!")
+     BackgroundCardComponent()
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+            Group {
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                .previewDisplayName("iPhone SE")
+
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
+                .previewDisplayName("iPhone XS Max")
+        }
     }
 }
