@@ -143,10 +143,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Biern" */;
 			buildPhases = (
+				EA4A1DCB251CA8DD00C96E20 /* SwiftLint */,
 				EA4A1D94251CA17B00C96E20 /* Sources */,
 				EA4A1D95251CA17B00C96E20 /* Frameworks */,
 				EA4A1D96251CA17B00C96E20 /* Resources */,
-				EA4A1DCB251CA8DD00C96E20 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -280,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint autocorrect && swiftlint\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
