@@ -10,12 +10,35 @@ import SwiftUI
 
 struct BackgroundCardComponent: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        Color("Grey")
+            .edgesIgnoringSafeArea(.vertical) // Ignore just for the color
+            .overlay(
+                GeometryReader { metrics in
+                    ZStack {
+                        Image("background")
+                            .resizable()
+                            .scaledToFill()
+                            .position(x: metrics.size.width * 0.5, y: metrics.size.height * 0.55)
+                        ZStack {
+                            Rectangle()
+                                .fill(Color("White"))
+                                .frame(width: metrics.size.width * 0.8, height: metrics.size.height * 0.7)
+                                .cornerRadius(28)
+                            ZStack {
+                                Circle()
+                                    .fill(Color("White"))
+                                    .frame(width: metrics.size.width * 0.5,
+                                           height: metrics.size.height * 0.5)
+                                    .position(x: metrics.size.width * 0.5, y: 115)
+                                Image("crown")
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .position(x: metrics.size.width * 0.5, y: 104)
 
-struct BackgroundCardComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        BackgroundCardComponent()
+                            }
+                        }
+                        .position(x: metrics.size.width * 0.5, y: metrics.size.height * 0.58)
+                    }
+            })
     }
 }

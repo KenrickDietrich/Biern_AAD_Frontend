@@ -15,6 +15,7 @@
 		EA4A1DA8251CA18000C96E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */; };
 		EA4A1DB3251CA18100C96E20 /* BiernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* BiernTests.swift */; };
 		EA4A1DBE251CA18100C96E20 /* BiernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */; };
+		EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiernUITests.swift; sourceTree = "<group>"; };
 		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		EA4A1D9A251CA17B00C96E20 /* Biern */ = {
 			isa = PBXGroup;
 			children = (
+				EA943AC5251CD3E700CAB20C /* Components */,
 				EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */,
 				EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */,
 				EA4A1D9F251CA17B00C96E20 /* ContentView.swift */,
@@ -134,6 +137,14 @@
 				EA4A1DBF251CA18100C96E20 /* Info.plist */,
 			);
 			path = BiernUITests;
+			sourceTree = "<group>";
+		};
+		EA943AC5251CD3E700CAB20C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */,
+				EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */,
 				EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */,
 				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
 			);
