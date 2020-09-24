@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EA4A1D98251CA17B00C96E20 /* Bier'n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bier'n.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1D98251CA17B00C96E20 /* Biern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EA4A1D9F251CA17B00C96E20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,10 +43,10 @@
 		EA4A1DA4251CA18000C96E20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA4A1DA7251CA18000C96E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4A1DA9251CA18000C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bier'nTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1DAE251CA18100C96E20 /* BiernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nTests.swift; sourceTree = "<group>"; };
 		EA4A1DB4251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bier'nUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nUITests.swift; sourceTree = "<group>"; };
 		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,9 +89,9 @@
 		EA4A1D99251CA17B00C96E20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A1D98251CA17B00C96E20 /* Bier'n.app */,
-				EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */,
-				EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */,
+				EA4A1D98251CA17B00C96E20 /* Biern.app */,
+				EA4A1DAE251CA18100C96E20 /* BiernTests.xctest */,
+				EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EA4A1D97251CA17B00C96E20 /* Bier'n */ = {
+		EA4A1D97251CA17B00C96E20 /* Biern */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'n" */;
+			buildConfigurationList = EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Biern" */;
 			buildPhases = (
 				EA4A1D94251CA17B00C96E20 /* Sources */,
 				EA4A1D95251CA17B00C96E20 /* Frameworks */,
@@ -152,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = "Bier'n";
+			name = Biern;
 			productName = "Bier'n";
-			productReference = EA4A1D98251CA17B00C96E20 /* Bier'n.app */;
+			productReference = EA4A1D98251CA17B00C96E20 /* Biern.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EA4A1DAD251CA18100C96E20 /* Bier'nTests */ = {
+		EA4A1DAD251CA18100C96E20 /* BiernTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nTests" */;
+			buildConfigurationList = EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "BiernTests" */;
 			buildPhases = (
 				EA4A1DAA251CA18100C96E20 /* Sources */,
 				EA4A1DAB251CA18100C96E20 /* Frameworks */,
@@ -170,14 +170,14 @@
 			dependencies = (
 				EA4A1DB0251CA18100C96E20 /* PBXTargetDependency */,
 			);
-			name = "Bier'nTests";
+			name = BiernTests;
 			productName = "Bier'nTests";
-			productReference = EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */;
+			productReference = EA4A1DAE251CA18100C96E20 /* BiernTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EA4A1DB8251CA18100C96E20 /* Bier'nUITests */ = {
+		EA4A1DB8251CA18100C96E20 /* BiernUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nUITests" */;
+			buildConfigurationList = EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "BiernUITests" */;
 			buildPhases = (
 				EA4A1DB5251CA18100C96E20 /* Sources */,
 				EA4A1DB6251CA18100C96E20 /* Frameworks */,
@@ -188,9 +188,9 @@
 			dependencies = (
 				EA4A1DBB251CA18100C96E20 /* PBXTargetDependency */,
 			);
-			name = "Bier'nUITests";
+			name = BiernUITests;
 			productName = "Bier'nUITests";
-			productReference = EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */;
+			productReference = EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Bier'n" */;
+			buildConfigurationList = EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Biern" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,9 +229,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA4A1D97251CA17B00C96E20 /* Bier'n */,
-				EA4A1DAD251CA18100C96E20 /* Bier'nTests */,
-				EA4A1DB8251CA18100C96E20 /* Bier'nUITests */,
+				EA4A1D97251CA17B00C96E20 /* Biern */,
+				EA4A1DAD251CA18100C96E20 /* BiernTests */,
+				EA4A1DB8251CA18100C96E20 /* BiernUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,12 +316,12 @@
 /* Begin PBXTargetDependency section */
 		EA4A1DB0251CA18100C96E20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA4A1D97251CA17B00C96E20 /* Bier'n */;
+			target = EA4A1D97251CA17B00C96E20 /* Biern */;
 			targetProxy = EA4A1DAF251CA18100C96E20 /* PBXContainerItemProxy */;
 		};
 		EA4A1DBB251CA18100C96E20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA4A1D97251CA17B00C96E20 /* Bier'n */;
+			target = EA4A1D97251CA17B00C96E20 /* Biern */;
 			targetProxy = EA4A1DBA251CA18100C96E20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -372,6 +372,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AAD_Group_4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -432,6 +433,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AAD_Group_4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -457,9 +459,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Bier'n/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Biern/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Bier'n/Info.plist";
+				INFOPLIST_FILE = Biern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,9 +478,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Bier'n/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Biern/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Bier'n/Info.plist";
+				INFOPLIST_FILE = Biern/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,7 +498,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Bier'nTests/Info.plist";
+				INFOPLIST_FILE = BiernTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,7 +509,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bier'n.app/Bier'n";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biern.app/Biern";
 			};
 			name = Debug;
 		};
@@ -517,7 +519,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Bier'nTests/Info.plist";
+				INFOPLIST_FILE = BiernTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,7 +530,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bier'n.app/Bier'n";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biern.app/Biern";
 			};
 			name = Release;
 		};
@@ -537,7 +539,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Bier'nUITests/Info.plist";
+				INFOPLIST_FILE = BiernUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +549,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Bier'n";
+				TEST_TARGET_NAME = Biern;
 			};
 			name = Debug;
 		};
@@ -556,7 +558,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Bier'nUITests/Info.plist";
+				INFOPLIST_FILE = BiernUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,14 +568,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Bier'n";
+				TEST_TARGET_NAME = Biern;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Bier'n" */ = {
+		EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Biern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4A1DC0251CA18100C96E20 /* Debug */,
@@ -582,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'n" */ = {
+		EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Biern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4A1DC3251CA18100C96E20 /* Debug */,
@@ -591,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nTests" */ = {
+		EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "BiernTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4A1DC6251CA18100C96E20 /* Debug */,
@@ -600,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nUITests" */ = {
+		EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "BiernUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA4A1DC9251CA18100C96E20 /* Debug */,

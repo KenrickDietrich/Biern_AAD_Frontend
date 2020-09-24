@@ -1,14 +1,6 @@
-//
-//  Bier_nUITests.swift
-//  Bier'nUITests
-//
-//  Created by Kenrick Dietrich on 24/09/2020.
-//  Copyright © 2020 AAD_Group_4. All rights reserved.
-//
-
 import XCTest
 
-class Bier_nUITests: XCTestCase {
+class BiernUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

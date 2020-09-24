@@ -1,8 +1,3 @@
-//  ContentView.swift
-//  Bier'n
-//  Copyright © 2020 AAD_Group_4. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
