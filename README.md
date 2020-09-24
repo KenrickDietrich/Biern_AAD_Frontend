@@ -9,7 +9,7 @@ Win and skip a drink or lose and drink up.
 ### Clone repo and navigate to project
 ```
 git clone https://github.com/KenrickDietrich/Biern_AAD_Frontend.git
-cd Bier\'n
+cd Biern_AAD_Frontend
 ```
 
 ### Open Xcode
