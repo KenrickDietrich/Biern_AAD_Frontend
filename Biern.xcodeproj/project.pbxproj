@@ -13,8 +13,8 @@
 		EA4A1DA2251CA18000C96E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA1251CA18000C96E20 /* Assets.xcassets */; };
 		EA4A1DA5251CA18000C96E20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA4251CA18000C96E20 /* Preview Assets.xcassets */; };
 		EA4A1DA8251CA18000C96E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */; };
-		EA4A1DB3251CA18100C96E20 /* Bier_nTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */; };
-		EA4A1DBE251CA18100C96E20 /* Bier_nUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */; };
+		EA4A1DB3251CA18100C96E20 /* BiernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* BiernTests.swift */; };
+		EA4A1DBE251CA18100C96E20 /* BiernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 		EA4A1DA7251CA18000C96E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4A1DA9251CA18000C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4A1DAE251CA18100C96E20 /* BiernTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nTests.swift; sourceTree = "<group>"; };
+		EA4A1DB2251CA18100C96E20 /* BiernTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiernTests.swift; sourceTree = "<group>"; };
 		EA4A1DB4251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nUITests.swift; sourceTree = "<group>"; };
+		EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiernUITests.swift; sourceTree = "<group>"; };
 		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +121,7 @@
 		EA4A1DB1251CA18100C96E20 /* BiernTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */,
+				EA4A1DB2251CA18100C96E20 /* BiernTests.swift */,
 				EA4A1DB4251CA18100C96E20 /* Info.plist */,
 			);
 			path = BiernTests;
@@ -130,7 +130,7 @@
 		EA4A1DBC251CA18100C96E20 /* BiernUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */,
+				EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */,
 				EA4A1DBF251CA18100C96E20 /* Info.plist */,
 			);
 			path = BiernUITests;
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4A1DB3251CA18100C96E20 /* Bier_nTests.swift in Sources */,
+				EA4A1DB3251CA18100C96E20 /* BiernTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4A1DBE251CA18100C96E20 /* Bier_nUITests.swift in Sources */,
+				EA4A1DBE251CA18100C96E20 /* BiernUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-n";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Biern";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-n";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Biern";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,7 +505,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.BiernTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -526,7 +526,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.BiernTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +545,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.BiernUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,7 +564,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.BiernUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
