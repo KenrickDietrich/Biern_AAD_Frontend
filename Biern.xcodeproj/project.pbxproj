@@ -79,9 +79,9 @@
 		EA4A1D8F251CA17B00C96E20 = {
 			isa = PBXGroup;
 			children = (
-				EA4A1D9A251CA17B00C96E20 /* Bier'n */,
-				EA4A1DB1251CA18100C96E20 /* Bier'nTests */,
-				EA4A1DBC251CA18100C96E20 /* Bier'nUITests */,
+				EA4A1D9A251CA17B00C96E20 /* Biern */,
+				EA4A1DB1251CA18100C96E20 /* BiernTests */,
+				EA4A1DBC251CA18100C96E20 /* BiernUITests */,
 				EA4A1D99251CA17B00C96E20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EA4A1D9A251CA17B00C96E20 /* Bier'n */ = {
+		EA4A1D9A251CA17B00C96E20 /* Biern */ = {
 			isa = PBXGroup;
 			children = (
 				EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */,
@@ -107,7 +107,7 @@
 				EA4A1DA9251CA18000C96E20 /* Info.plist */,
 				EA4A1DA3251CA18000C96E20 /* Preview Content */,
 			);
-			path = "Bier'n";
+			path = Biern;
 			sourceTree = "<group>";
 		};
 		EA4A1DA3251CA18000C96E20 /* Preview Content */ = {
@@ -118,22 +118,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EA4A1DB1251CA18100C96E20 /* Bier'nTests */ = {
+		EA4A1DB1251CA18100C96E20 /* BiernTests */ = {
 			isa = PBXGroup;
 			children = (
 				EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */,
 				EA4A1DB4251CA18100C96E20 /* Info.plist */,
 			);
-			path = "Bier'nTests";
+			path = BiernTests;
 			sourceTree = "<group>";
 		};
-		EA4A1DBC251CA18100C96E20 /* Bier'nUITests */ = {
+		EA4A1DBC251CA18100C96E20 /* BiernUITests */ = {
 			isa = PBXGroup;
 			children = (
 				EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */,
 				EA4A1DBF251CA18100C96E20 /* Info.plist */,
 			);
-			path = "Bier'nUITests";
+			path = BiernUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +146,7 @@
 				EA4A1D94251CA17B00C96E20 /* Sources */,
 				EA4A1D95251CA17B00C96E20 /* Frameworks */,
 				EA4A1D96251CA17B00C96E20 /* Resources */,
+				EA4A1DCB251CA8DD00C96E20 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -261,6 +262,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA4A1DCB251CA8DD00C96E20 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA4A1D94251CA17B00C96E20 /* Sources */ = {

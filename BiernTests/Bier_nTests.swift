@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Bier_n
+@testable import Biern
 
 class Bier_nTests: XCTestCase {
 
