@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */; };
+		EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */; };
+		EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9F251CA17B00C96E20 /* ContentView.swift */; };
+		EA4A1DA2251CA18000C96E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA1251CA18000C96E20 /* Assets.xcassets */; };
+		EA4A1DA5251CA18000C96E20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA4251CA18000C96E20 /* Preview Assets.xcassets */; };
+		EA4A1DA8251CA18000C96E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */; };
+		EA4A1DB3251CA18100C96E20 /* Bier_nTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */; };
+		EA4A1DBE251CA18100C96E20 /* Bier_nUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA4A1DAF251CA18100C96E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A1D90251CA17B00C96E20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A1D97251CA17B00C96E20;
+			remoteInfo = "Bier'n";
+		};
+		EA4A1DBA251CA18100C96E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA4A1D90251CA17B00C96E20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4A1D97251CA17B00C96E20;
+			remoteInfo = "Bier'n";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA4A1D98251CA17B00C96E20 /* Bier'n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bier'n.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EA4A1D9F251CA17B00C96E20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EA4A1DA1251CA18000C96E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA4A1DA4251CA18000C96E20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA4A1DA7251CA18000C96E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA4A1DA9251CA18000C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bier'nTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nTests.swift; sourceTree = "<group>"; };
+		EA4A1DB4251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bier'nUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bier_nUITests.swift; sourceTree = "<group>"; };
+		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA4A1D95251CA17B00C96E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DAB251CA18100C96E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DB6251CA18100C96E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA4A1D8F251CA17B00C96E20 = {
+			isa = PBXGroup;
+			children = (
+				EA4A1D9A251CA17B00C96E20 /* Bier'n */,
+				EA4A1DB1251CA18100C96E20 /* Bier'nTests */,
+				EA4A1DBC251CA18100C96E20 /* Bier'nUITests */,
+				EA4A1D99251CA17B00C96E20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA4A1D99251CA17B00C96E20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A1D98251CA17B00C96E20 /* Bier'n.app */,
+				EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */,
+				EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA4A1D9A251CA17B00C96E20 /* Bier'n */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */,
+				EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */,
+				EA4A1D9F251CA17B00C96E20 /* ContentView.swift */,
+				EA4A1DA1251CA18000C96E20 /* Assets.xcassets */,
+				EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */,
+				EA4A1DA9251CA18000C96E20 /* Info.plist */,
+				EA4A1DA3251CA18000C96E20 /* Preview Content */,
+			);
+			path = "Bier'n";
+			sourceTree = "<group>";
+		};
+		EA4A1DA3251CA18000C96E20 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A1DA4251CA18000C96E20 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA4A1DB1251CA18100C96E20 /* Bier'nTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A1DB2251CA18100C96E20 /* Bier_nTests.swift */,
+				EA4A1DB4251CA18100C96E20 /* Info.plist */,
+			);
+			path = "Bier'nTests";
+			sourceTree = "<group>";
+		};
+		EA4A1DBC251CA18100C96E20 /* Bier'nUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A1DBD251CA18100C96E20 /* Bier_nUITests.swift */,
+				EA4A1DBF251CA18100C96E20 /* Info.plist */,
+			);
+			path = "Bier'nUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA4A1D97251CA17B00C96E20 /* Bier'n */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'n" */;
+			buildPhases = (
+				EA4A1D94251CA17B00C96E20 /* Sources */,
+				EA4A1D95251CA17B00C96E20 /* Frameworks */,
+				EA4A1D96251CA17B00C96E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bier'n";
+			productName = "Bier'n";
+			productReference = EA4A1D98251CA17B00C96E20 /* Bier'n.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA4A1DAD251CA18100C96E20 /* Bier'nTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nTests" */;
+			buildPhases = (
+				EA4A1DAA251CA18100C96E20 /* Sources */,
+				EA4A1DAB251CA18100C96E20 /* Frameworks */,
+				EA4A1DAC251CA18100C96E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A1DB0251CA18100C96E20 /* PBXTargetDependency */,
+			);
+			name = "Bier'nTests";
+			productName = "Bier'nTests";
+			productReference = EA4A1DAE251CA18100C96E20 /* Bier'nTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA4A1DB8251CA18100C96E20 /* Bier'nUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nUITests" */;
+			buildPhases = (
+				EA4A1DB5251CA18100C96E20 /* Sources */,
+				EA4A1DB6251CA18100C96E20 /* Frameworks */,
+				EA4A1DB7251CA18100C96E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA4A1DBB251CA18100C96E20 /* PBXTargetDependency */,
+			);
+			name = "Bier'nUITests";
+			productName = "Bier'nUITests";
+			productReference = EA4A1DB9251CA18100C96E20 /* Bier'nUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA4A1D90251CA17B00C96E20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = AAD_Group_4;
+				TargetAttributes = {
+					EA4A1D97251CA17B00C96E20 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					EA4A1DAD251CA18100C96E20 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = EA4A1D97251CA17B00C96E20;
+					};
+					EA4A1DB8251CA18100C96E20 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = EA4A1D97251CA17B00C96E20;
+					};
+				};
+			};
+			buildConfigurationList = EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Bier'n" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA4A1D8F251CA17B00C96E20;
+			productRefGroup = EA4A1D99251CA17B00C96E20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA4A1D97251CA17B00C96E20 /* Bier'n */,
+				EA4A1DAD251CA18100C96E20 /* Bier'nTests */,
+				EA4A1DB8251CA18100C96E20 /* Bier'nUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA4A1D96251CA17B00C96E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A1DA8251CA18000C96E20 /* LaunchScreen.storyboard in Resources */,
+				EA4A1DA5251CA18000C96E20 /* Preview Assets.xcassets in Resources */,
+				EA4A1DA2251CA18000C96E20 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DAC251CA18100C96E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DB7251CA18100C96E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA4A1D94251CA17B00C96E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */,
+				EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */,
+				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DAA251CA18100C96E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A1DB3251CA18100C96E20 /* Bier_nTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA4A1DB5251CA18100C96E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA4A1DBE251CA18100C96E20 /* Bier_nUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA4A1DB0251CA18100C96E20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A1D97251CA17B00C96E20 /* Bier'n */;
+			targetProxy = EA4A1DAF251CA18100C96E20 /* PBXContainerItemProxy */;
+		};
+		EA4A1DBB251CA18100C96E20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4A1D97251CA17B00C96E20 /* Bier'n */;
+			targetProxy = EA4A1DBA251CA18100C96E20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA4A1DA7251CA18000C96E20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA4A1DC0251CA18100C96E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA4A1DC1251CA18100C96E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA4A1DC3251CA18100C96E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bier'n/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bier'n/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-n";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA4A1DC4251CA18100C96E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bier'n/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bier'n/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-n";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA4A1DC6251CA18100C96E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bier'nTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bier'n.app/Bier'n";
+			};
+			name = Debug;
+		};
+		EA4A1DC7251CA18100C96E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bier'nTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bier'n.app/Bier'n";
+			};
+			name = Release;
+		};
+		EA4A1DC9251CA18100C96E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bier'nUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bier'n";
+			};
+			name = Debug;
+		};
+		EA4A1DCA251CA18100C96E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Bier'nUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AAD-Group-4.Bier-nUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bier'n";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA4A1D93251CA17B00C96E20 /* Build configuration list for PBXProject "Bier'n" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A1DC0251CA18100C96E20 /* Debug */,
+				EA4A1DC1251CA18100C96E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A1DC2251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'n" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A1DC3251CA18100C96E20 /* Debug */,
+				EA4A1DC4251CA18100C96E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A1DC5251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A1DC6251CA18100C96E20 /* Debug */,
+				EA4A1DC7251CA18100C96E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4A1DC8251CA18100C96E20 /* Build configuration list for PBXNativeTarget "Bier'nUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA4A1DC9251CA18100C96E20 /* Debug */,
+				EA4A1DCA251CA18100C96E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA4A1D90251CA17B00C96E20 /* Project object */;
+}
