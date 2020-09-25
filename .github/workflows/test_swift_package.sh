@@ -3,4 +3,4 @@
 
 set -eo pipefail
 
-cd Calculator-package; swift test --parallel; cd ..
+cd Biern; swift test --parallel; cd ..
