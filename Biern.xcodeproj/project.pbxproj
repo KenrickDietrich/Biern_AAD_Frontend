@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B725F251DDB1700C82BFC /* LoginView.swift */; };
 		EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */; };
 		EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */; };
 		EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9F251CA17B00C96E20 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA3B725F251DDB1700C82BFC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EA4A1D98251CA17B00C96E20 /* Biern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3B7258251DDAF700C82BFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA3B725F251DDB1700C82BFC /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EA4A1D8F251CA17B00C96E20 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		EA4A1D9A251CA17B00C96E20 /* Biern */ = {
 			isa = PBXGroup;
 			children = (
+				EA3B7258251DDAF700C82BFC /* Views */,
 				EA943AC5251CD3E700CAB20C /* Components */,
 				EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */,
 				EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */,
@@ -211,7 +222,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = AAD_Group_4;
 				TargetAttributes = {
 					EA4A1D97251CA17B00C96E20 = {
@@ -303,6 +314,7 @@
 				EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */,
 				EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */,
 				EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */,
+				EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */,
 				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +388,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -437,6 +450,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
