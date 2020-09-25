@@ -33,10 +33,9 @@ struct LoginView: View {
                         .padding(.horizontal, 60.0)
                 }
                 .foregroundColor(Color("Black"))
-            }
+            }.edgesIgnoringSafeArea(.all)
         }
     }
-
 }
 
 struct LoginView_Previews: PreviewProvider {

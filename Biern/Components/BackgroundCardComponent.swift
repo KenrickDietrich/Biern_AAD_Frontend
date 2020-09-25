@@ -37,6 +37,7 @@ struct BackgroundCardComponent: View {
 
                         }.offset(y: -screenHeight * 0.35)
                     }.offset(y: screenHeight * 0.05)
+                    Spacer()
                 }
             )
     }
