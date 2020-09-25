@@ -13,13 +13,13 @@ struct BackgroundCardComponent: View {
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
         Color("Grey")
-            .edgesIgnoringSafeArea(.vertical)
+            .edgesIgnoringSafeArea(.all)
             .overlay(
                 ZStack {
                     Image("background")
                         .resizable()
                         .scaledToFill()
-                        .position(x: screenWidth * 0.5, y: screenHeight * 0.55)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     ZStack {
                         Rectangle()
                             .fill(Color("White"))
@@ -33,11 +33,10 @@ struct BackgroundCardComponent: View {
                         Image("crown")
                             .resizable()
                             .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
+                            .offset(y: -screenHeight * 0.03)
 
-                        }.position(x: screenWidth * 0.5, y: screenHeight * 0.06)
-
-                    }
-                    .position(x: screenWidth * 0.5, y: screenHeight * 0.38)
+                        }.offset(y: -screenHeight * 0.35)
+                    }.offset(y: screenHeight * 0.05)
                 }
             )
     }
@@ -45,6 +44,10 @@ struct BackgroundCardComponent: View {
 
 struct BackgroundCardComponent_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundCardComponent()
+        Group {
+            BackgroundCardComponent()
+            BackgroundCardComponent()
+                .previewDevice("iPhone 11 Pro Max")
+        }
     }
 }

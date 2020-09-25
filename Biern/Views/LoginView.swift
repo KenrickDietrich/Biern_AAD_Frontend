@@ -33,7 +33,6 @@ struct LoginView: View {
                         .padding(.horizontal, 60.0)
                 }
                 .foregroundColor(Color("Black"))
-                .position(x: screenWidth * 0.5, y: screenHeight * 0.3)
             }
         }
     }
