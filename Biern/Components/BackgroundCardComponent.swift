@@ -25,15 +25,16 @@ struct BackgroundCardComponent: View {
                             .fill(Color("White"))
                             .frame(width: screenWidth * 0.8, height: screenHeight * 0.75)
                             .cornerRadius(28)
+                        ZStack {
                         Circle()
                             .fill(Color("White"))
                             .frame(width: screenWidth * 0.5,
                                    height: screenHeight * 0.5)
-                            .position(x: screenWidth * 0.5, y: screenHeight * 0.06)
                         Image("crown")
                             .resizable()
                             .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                            .position(x: screenWidth * 0.5, y: screenHeight * 0.06)
+
+                        }.position(x: screenWidth * 0.5, y: screenHeight * 0.06)
 
                     }
                     .position(x: screenWidth * 0.5, y: screenHeight * 0.38)

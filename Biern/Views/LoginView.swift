@@ -28,9 +28,7 @@ struct LoginView: View {
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
 
-                    Text("""
-                    Please enter an username, you can change this name later.
-                    """)
+                    Text("Please enter an username, you can change this name later.")
                         .font(.footnote)
                         .padding(.horizontal, 60.0)
                 }
