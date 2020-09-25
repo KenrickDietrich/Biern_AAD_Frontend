@@ -4,9 +4,9 @@ struct LoginView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
+        NavigationView {
             ZStack {
                 BackgroundCardComponent()
-
                 VStack {
                     Text("Bier'n het drankspel")
                     Text("Username:")
@@ -18,6 +18,7 @@ struct LoginView: View {
                         .frame(width: screenWidth * 0.6)
                         .padding(.bottom, 20.0)
 
+                    //Change BackgroundCardComponent to next view
                     NavigationLink(destination: BackgroundCardComponent()) {
                         Text("Next")
 
@@ -34,8 +35,10 @@ struct LoginView: View {
                         .padding(.horizontal, 60.0)
                 }
                 .foregroundColor(Color("Black"))
+                .position(x: screenWidth * 0.5, y: screenHeight * 0.3)
             }
         }
+    }
 
 }
 
