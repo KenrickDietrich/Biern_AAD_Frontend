@@ -9,6 +9,7 @@ struct LoginView: View {
                 BackgroundCardComponent()
                 VStack {
                     Text("Bier'n het drankspel")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     Text("Username:")
                         .padding(.top, screenWidth * 0.05)
                     TextField("", text: .constant(""))
@@ -31,6 +32,7 @@ struct LoginView: View {
                     Text("Please enter an username, you can change this name later.")
                         .font(.footnote)
                         .padding(.horizontal, 60.0)
+                        .padding(.top, 20)
                 }
                 .foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
