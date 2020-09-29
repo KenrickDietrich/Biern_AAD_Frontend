@@ -18,17 +18,14 @@ struct LoginView: View {
                         .cornerRadius(12)
                         .frame(width: screenWidth * 0.6)
                         .padding(.bottom, 20.0)
-
                     //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: BackgroundCardComponent()) {
+                    NavigationLink(destination: JoinPartyView()) {
                         Text("Next")
-
                     }
                     .padding(8.0)
                     .background(Color("Orange"))
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
-
                     Text("Please enter an username, you can change this name later.")
                         .font(.footnote)
                         .padding(.horizontal, 60.0)
