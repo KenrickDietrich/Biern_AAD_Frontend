@@ -29,7 +29,6 @@ struct LoginView: View {
                         }, label: {
                             Text("Next")
                         })
-                    }
                     .padding(8.0)
                     .background(Color("Orange"))
                     .foregroundColor(Color("White"))
