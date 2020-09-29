@@ -4,7 +4,17 @@ struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var userData: UserData
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image("arrow-right")
+                    .aspectRatio(contentMode: .fit)
+                }
+            }
+    }
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,6 +55,8 @@ struct UserView: View {
                 .foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
     }
 }
 
