@@ -5,13 +5,13 @@ struct LoginView: View {
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var userData: UserData
     @State var input = ""
+    @State var isActive = false
 
     var body: some View {
         NavigationView {
             ZStack {
                 BackgroundCardComponent()
                 VStack {
-                    Text("\(self.userData.username)")
                     Text("Bier'n het drankspel")
                         .font(.title)
                     Text("Username:")
@@ -22,11 +22,10 @@ struct LoginView: View {
                         .cornerRadius(12)
                         .frame(width: screenWidth * 0.6)
                         .padding(.bottom, 20.0)
-
-                    //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: UserView(userData: self.userData)) {
+                    NavigationLink(destination: UserView(userData: self.userData), isActive: $isActive) {
                         Button(action: {
                             self.userData.username = self.input
+                            self.isActive = true
                         }, label: {
                             Text("Next")
                         })
@@ -35,7 +34,6 @@ struct LoginView: View {
                     .background(Color("Orange"))
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
-
                     Text("Please enter an username, you can change this name later.")
                         .font(.footnote)
                         .padding(.horizontal, 60.0)
