@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var userData = UserData()
 
     var body: some View {
-        LoginView()
+        LoginView(userData: self.userData)
     }
 }
 struct ContentView_Previews: PreviewProvider {

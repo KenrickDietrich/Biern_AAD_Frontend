@@ -3,16 +3,20 @@ import SwiftUI
 struct LoginView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    @ObservedObject var userData: UserData
+    @State var input = ""
+
     var body: some View {
         NavigationView {
             ZStack {
                 BackgroundCardComponent()
                 VStack {
+                    Text("\(self.userData.username)")
                     Text("Bier'n het drankspel")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                     Text("Username:")
                         .padding(.top, screenWidth * 0.05)
-                    TextField("", text: .constant(""))
+                    TextField("", text: self.$input)
                         .padding(5.0)
                         .background(Color("Grey"))
                         .cornerRadius(12)
@@ -20,9 +24,12 @@ struct LoginView: View {
                         .padding(.bottom, 20.0)
 
                     //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: BackgroundCardComponent()) {
-                        Text("Next")
-
+                    NavigationLink(destination: UserView(userData: self.userData)) {
+                        Button(action: {
+                            self.userData.username = self.input
+                        }, label: {
+                            Text("Next")
+                        })
                     }
                     .padding(8.0)
                     .background(Color("Orange"))
@@ -42,6 +49,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(userData: UserData())
     }
 }
