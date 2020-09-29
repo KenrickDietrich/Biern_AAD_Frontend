@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LoginView: View {
+struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
@@ -8,10 +8,7 @@ struct LoginView: View {
             ZStack {
                 BackgroundCardComponent()
                 VStack {
-                    Text("Bier'n het drankspel")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    Text("Username:")
-                        .padding(.top, screenWidth * 0.05)
+                    Text("Party code:")
                     TextField("", text: .constant(""))
                         .padding(5.0)
                         .background(Color("Grey"))
@@ -19,16 +16,18 @@ struct LoginView: View {
                         .frame(width: screenWidth * 0.6)
                         .padding(.bottom, 20.0)
                     //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: JoinPartyView()) {
-                        Text("Next")
+                    NavigationLink(destination: BackgroundCardComponent()) {
+                        Text("Join game")
                     }
                     .padding(8.0)
                     .background(Color("Orange"))
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
-                    Text("Please enter an username, you can change this name later.")
+                    Text("""
+                        Enter the party code that you want to join.
+                        Note: The party codes are case sensitive.
+                        """)
                         .font(.footnote)
-                        .padding(.horizontal, 60.0)
                         .padding(.top, 20)
                 }
                 .foregroundColor(Color("Black"))
@@ -37,8 +36,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct JoinPartyView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        JoinPartyView()
     }
 }
