@@ -22,6 +22,7 @@ struct LoginView: View {
                         .cornerRadius(12)
                         .frame(width: screenWidth * 0.6)
                         .padding(.bottom, 20.0)
+<<<<<<< HEAD
                     NavigationLink(destination: UserView(userData: self.userData), isActive: $isActive) {
                         Button(action: {
                             self.userData.username = self.input
@@ -29,6 +30,11 @@ struct LoginView: View {
                         }, label: {
                             Text("Next")
                         })
+=======
+                    //Change BackgroundCardComponent to next view
+                    NavigationLink(destination: JoinPartyView()) {
+                        Text("Next")
+>>>>>>> 0f4229286e08af4b64baf06efa123f8bba58ac64
                     }
                     .padding(8.0)
                     .background(Color("Orange"))
