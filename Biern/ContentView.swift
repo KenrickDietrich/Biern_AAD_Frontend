@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    @StateObject var userData = UserData()
     var body: some View {
         NavigationView {
             LoginView()

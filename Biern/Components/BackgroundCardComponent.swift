@@ -1,11 +1,3 @@
-//
-//  BackgroundCardComponent.swift
-//  Biern
-//
-//  Created by Kenrick Dietrich on 24/09/2020.
-//  Copyright © 2020 AAD_Group_4. All rights reserved.
-//
-
 import SwiftUI
 
 struct BackgroundCardComponent: View {

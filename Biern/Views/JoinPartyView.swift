@@ -6,14 +6,15 @@ struct JoinPartyView: View {
     var body: some View {
             ZStack {
                 BackgroundCardComponent()
-                VStack {
-                    Text("Party code:")
-                    TextField("", text: .constant(""))
-                        .padding(5.0)
-                        .background(Color("Grey"))
-                        .cornerRadius(12)
-                        .frame(width: screenWidth * 0.6)
-                        .padding(.bottom, 20.0)
+                VStack(spacing: 30) {
+                    VStack {
+                        Text("Party code:")
+                        TextField("", text: .constant(""))
+                            .padding(5.0)
+                            .background(Color("Grey"))
+                            .cornerRadius(12)
+                            .frame(width: screenWidth * 0.6)
+                    }
                     //Change BackgroundCardComponent to next view
                     NavigationLink(destination: BackgroundCardComponent()) {
                         Text("Join game")
@@ -27,9 +28,9 @@ struct JoinPartyView: View {
                         Note: The party codes are case sensitive.
                         """)
                         .font(.footnote)
-                        .padding(.top, 20)
-                }
-                .foregroundColor(Color("Black"))
+                        .padding(.horizontal, 50.0)
+
+                }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
     }
 }
