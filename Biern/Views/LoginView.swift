@@ -11,17 +11,17 @@ struct LoginView: View {
         NavigationView {
             ZStack {
                 BackgroundCardComponent()
-                VStack {
+                VStack(spacing: 30) {
                     Text("Bier'n het drankspel")
                         .font(.title)
-                    Text("Username:")
-                        .padding(.top, screenWidth * 0.05)
-                    TextField("", text: self.$input)
-                        .padding(5.0)
-                        .background(Color("Grey"))
-                        .cornerRadius(12)
-                        .frame(width: screenWidth * 0.6)
-                        .padding(.bottom, 20.0)
+                    VStack {
+                        Text("Username:")
+                        TextField("", text: self.$input)
+                            .padding(5.0)
+                            .background(Color("Grey"))
+                            .cornerRadius(12)
+                            .frame(width: screenWidth * 0.6)
+                    }
                     NavigationLink(destination: UserView(userData: self.userData), isActive: $isActive) {
                         Button(action: {
                             self.userData.username = self.input
@@ -29,23 +29,22 @@ struct LoginView: View {
                         }, label: {
                             Text("Next")
                         })
-                    .padding(8.0)
-                    .background(Color("Orange"))
-                    .foregroundColor(Color("White"))
-                    .cornerRadius(10)
+                        .padding(8.0)
+                        .background(Color("Orange"))
+                        .foregroundColor(Color("White"))
+                        .cornerRadius(10)
+                    }
                     Text("Please enter an username, you can change this name later.")
                         .font(.footnote)
-                        .padding(.horizontal, 60.0)
-                        .padding(.top, 20)
-                }
-                .foregroundColor(Color("Black"))
+                        .padding(.horizontal, 50.0)
+                }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
     }
-}
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(userData: UserData())
+    struct LoginView_Previews: PreviewProvider {
+        static var previews: some View {
+            LoginView(userData: UserData())
+        }
     }
 }

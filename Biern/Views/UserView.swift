@@ -4,29 +4,18 @@ struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var userData: UserData
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image("arrow-right")
-                    .aspectRatio(contentMode: .fit)
-                }
-            }
-    }
     var body: some View {
         NavigationView {
             ZStack {
                 BackgroundCardComponent()
-                VStack {
+                VStack(spacing: 30) {
                     HStack {
                         Text("Hallo, " + "\(self.userData.username)")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     }
                     .padding(5.0)
                     .frame(width: screenWidth * 0.6)
-                    .padding(.bottom, 30.0)
                     HStack {
                     //Change BackgroundCardComponent to next view
                     NavigationLink(destination: BackgroundCardComponent()) {
@@ -49,14 +38,10 @@ struct UserView: View {
 
                     Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
-                        .padding(.horizontal, 80.0)
-                        .padding(.top, 20.0)
-                }
-                .foregroundColor(Color("Black"))
+                        .padding(.horizontal, 50.0)
+                }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: btnBack)
     }
 }
 
