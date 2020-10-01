@@ -8,7 +8,6 @@ struct LoginView: View {
     @State var isActive = false
 
     var body: some View {
-        NavigationView {
             ZStack {
                 BackgroundCardComponent()
                 VStack(spacing: 30) {
@@ -39,7 +38,6 @@ struct LoginView: View {
                         .padding(.horizontal, 50.0)
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
-        }
     }
 
     struct LoginView_Previews: PreviewProvider {

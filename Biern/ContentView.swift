@@ -3,12 +3,14 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var userData = UserData()
     var body: some View {
-        LoginView(userData: UserData())
+        NavigationView {
+            LoginView()
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-            Group {
+        Group {
             ContentView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
                 .previewDisplayName("iPhone SE")
