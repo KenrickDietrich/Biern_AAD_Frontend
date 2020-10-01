@@ -1,44 +1,52 @@
 import SwiftUI
 
-struct JoinPartyView: View {
+struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    @ObservedObject var userData: UserData
+
     var body: some View {
         NavigationView {
             ZStack {
                 BackgroundCardComponent()
                 VStack(spacing: 30) {
-                    VStack {
-                        Text("Party code:")
-                        TextField("", text: .constant(""))
-                            .padding(5.0)
-                            .background(Color("Grey"))
-                            .cornerRadius(12)
-                            .frame(width: screenWidth * 0.6)
+                    HStack {
+                        Text("Hallo, " + "\(self.userData.username)")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     }
+                    .padding(5.0)
+                    .frame(width: screenWidth * 0.6)
+                    HStack {
                     //Change BackgroundCardComponent to next view
                     NavigationLink(destination: BackgroundCardComponent()) {
-                        Text("Join game")
+                        Text("Create game")
                     }
                     .padding(8.0)
                     .background(Color("Orange"))
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
-                    Text("""
-                        Enter the party code that you want to join.
-                        Note: The party codes are case sensitive.
-                        """)
+                    //Change BackgroundCardComponent to next view
+                    NavigationLink(destination: BackgroundCardComponent()) {
+                        Text("Join game")
+
+                    }
+                    .padding(8.0)
+                    .background(Color("Orange"))
+                    .foregroundColor(Color("White"))
+                    .cornerRadius(10)
+                    }
+
+                    Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
                         .padding(.horizontal, 50.0)
-
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
     }
 }
 
-struct JoinPartyView_Previews: PreviewProvider {
+struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinPartyView()
+        UserView(userData: UserData())
     }
 }
