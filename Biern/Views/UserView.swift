@@ -26,7 +26,7 @@ struct UserView: View {
                     .foregroundColor(Color("White"))
                     .cornerRadius(10)
                     //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: BackgroundCardComponent()) {
+                    NavigationLink(destination: WaitingHostScreen()) {
                         Text("Join game")
 
                     }
