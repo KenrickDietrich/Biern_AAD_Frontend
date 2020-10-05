@@ -1,11 +1,3 @@
-//
-//  GameScreen.swift
-//  Biern
-//
-//  Created by Jasper Lanting on 01/10/2020.
-//  Copyright © 2020 AAD_Group_4. All rights reserved.
-//
-
 import SwiftUI
 
 struct GameScreen: View {
@@ -27,7 +19,7 @@ struct GameScreen: View {
                            height: screenHeight * 0.5)
                     .cornerRadius(28)
                     .onTapGesture {
-                        color = Color.green
+                        color = Color("Green")
                     }
             }
             //hide the navigation bar, users can't go back on this page
