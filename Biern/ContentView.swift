@@ -4,7 +4,7 @@ struct ContentView: View {
     @StateObject var userData = UserData()
     var body: some View {
         NavigationView {
-            LoginView()
+            LoginView(userData: self.userData)
         }
     }
 }
