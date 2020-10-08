@@ -9,6 +9,5 @@ class PartyData: ObservableObject {
     // Change when both settings and results model is made
     @Published var settings: String = ""
     @Published var results: String = ""
-    
-    
+
 }

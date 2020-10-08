@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WaitingHostScreen: View {
+struct WaitingHostView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {

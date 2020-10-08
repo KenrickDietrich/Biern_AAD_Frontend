@@ -1,21 +1,14 @@
 import UIKit
 
-struct Game: Hashable, Codable {
-    var gameId: UUID
-    var name: String
-    let rules: String
-    fileprivate var image: String
+class Game: ObservableObject {
+    @Published var gameId: Int
+    @Published var name: String = ""
+    @Published var rules: String = ""
+//    @Published fileprivate var image: String
 
-    init(gameId: UUID, name: String, rules: String, image: String) {
+    init(gameId: Int, name: String, rules: String) {
         self.gameId = gameId
         self.name = name
         self.rules = rules
-        self.image = image
     }
 }
-
-//extension Game {
-//    var image: Image {
-//        ImageStore.shared.image(name : imageName)
-//    }
-//}

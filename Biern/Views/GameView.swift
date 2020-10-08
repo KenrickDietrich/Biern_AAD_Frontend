@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GameScreen: View {
+struct GameView: View {
     @State var color: Color
 
     let screenWidth = UIScreen.main.bounds.size.width

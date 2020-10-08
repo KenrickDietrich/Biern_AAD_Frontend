@@ -19,7 +19,7 @@ struct JoinPartyView: View {
                     }
                     //Change BackgroundCardComponent to next view
 
-                    NavigationLink(destination: GameScreen(color: self.color)) {
+                    NavigationLink(destination: GameView(color: self.color)) {
                         Text("Join game")
                     }
                     .padding(8.0)
