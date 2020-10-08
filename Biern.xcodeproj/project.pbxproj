@@ -25,6 +25,7 @@
 		EA4A1DB3251CA18100C96E20 /* BiernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* BiernTests.swift */; };
 		EA4A1DBE251CA18100C96E20 /* BiernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */; };
 		EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */; };
+		EAA47F84252F5235000F99DB /* PartyUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA47F83252F5235000F99DB /* PartyUserView.swift */; };
 		EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C78252220B400FEA51C /* JoinPartyView.swift */; };
 		EAAE1C81252223D000FEA51C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C80252223D000FEA51C /* UserView.swift */; };
 		EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C8625232BF600FEA51C /* UserData.swift */; };
@@ -72,6 +73,7 @@
 		EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiernUITests.swift; sourceTree = "<group>"; };
 		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardComponent.swift; sourceTree = "<group>"; };
+		EAA47F83252F5235000F99DB /* PartyUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyUserView.swift; sourceTree = "<group>"; };
 		EAAE1C78252220B400FEA51C /* JoinPartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPartyView.swift; sourceTree = "<group>"; };
 		EAAE1C80252223D000FEA51C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		EAAE1C8625232BF600FEA51C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
 				CFC422C22525BDB900228508 /* GameView.swift */,
 				CF8E0893252EFFAD00EFE6CB /* ChooseGameView.swift */,
+				EAA47F83252F5235000F99DB /* PartyUserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */,
 				EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */,
 				CF1F50BC25261AAD00F43E94 /* WaitingHostView.swift in Sources */,
+				EAA47F84252F5235000F99DB /* PartyUserView.swift in Sources */,
 				EA116322252F2AC6006571D6 /* DataProvider.swift in Sources */,
 				EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */,
 				EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */,

@@ -6,7 +6,6 @@ struct LoginView: View {
     @ObservedObject var userData: UserData
     @State var input = ""
     @State var isActive = false
-    @EnvironmentObject var data: DataProvider
     var body: some View {
             ZStack {
                 BackgroundCardComponent()
@@ -38,9 +37,6 @@ struct LoginView: View {
                         .padding(.horizontal, 50.0)
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
-            .onAppear(perform: {
-                data.fetchParties()
-            })
     }
 
     struct LoginView_Previews: PreviewProvider {

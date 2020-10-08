@@ -9,6 +9,7 @@ class DataProvider: ObservableObject {
     }
 
     func fetchParties() {
+        self.parties.append(PartyData(partyCode: "party code"))
         // fetch all parties
     }
 
