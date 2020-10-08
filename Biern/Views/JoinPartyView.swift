@@ -3,6 +3,8 @@ import SwiftUI
 struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    @State var color = Color("Red")
+
     var body: some View {
             ZStack {
                 BackgroundCardComponent()
@@ -16,7 +18,8 @@ struct JoinPartyView: View {
                             .frame(width: screenWidth * 0.6)
                     }
                     //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: WaitingHostScreen()) {
+
+                    NavigationLink(destination: GameScreen(color: self.color)) {
                         Text("Join game")
                     }
                     .padding(8.0)

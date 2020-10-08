@@ -1,4 +1,5 @@
 @testable import Biern
+import XCTest
 
 class BiernTests: XCTestCase {
 
@@ -21,5 +22,4 @@ class BiernTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

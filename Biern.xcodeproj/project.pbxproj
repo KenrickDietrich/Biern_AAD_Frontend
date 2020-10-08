@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF1F50BC25261AAD00F43E94 /* WaitingHostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1F50BB25261AAD00F43E94 /* WaitingHostScreen.swift */; };
+		CFC422C32525BDB900228508 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC422C22525BDB900228508 /* GameScreen.swift */; };
 		EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B725F251DDB1700C82BFC /* LoginView.swift */; };
 		EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */; };
 		EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		CF1F50BB25261AAD00F43E94 /* WaitingHostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingHostScreen.swift; sourceTree = "<group>"; };
+		CFC422C22525BDB900228508 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		EA3B725F251DDB1700C82BFC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EA4A1D98251CA17B00C96E20 /* Biern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,9 @@
 				EAAE1C80252223D000FEA51C /* UserView.swift */,
 				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
 				CF1F50BB25261AAD00F43E94 /* WaitingHostScreen.swift */,
+				EAAE1C80252223D000FEA51C /* UserView.swift */,
+				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
+				CFC422C22525BDB900228508 /* GameScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				EA4A1D94251CA17B00C96E20 /* Sources */,
 				EA4A1D95251CA17B00C96E20 /* Frameworks */,
 				EA4A1D96251CA17B00C96E20 /* Resources */,
+				CFC422C12525B88E00228508 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -306,6 +312,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CFC422C12525B88E00228508 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		EA4A1DCB251CA8DD00C96E20 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +362,7 @@
 				EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */,
 				EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */,
 				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
+				CFC422C32525BDB900228508 /* GameScreen.swift in Sources */,
 				EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
