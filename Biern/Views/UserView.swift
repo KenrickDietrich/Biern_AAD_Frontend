@@ -6,40 +6,39 @@ struct UserView: View {
     @ObservedObject var userData: UserData
 
     var body: some View {
-        ZStack {
-            BackgroundCardComponent()
-            VStack(spacing: 30) {
-                HStack {
-                    Text("Hallo, " + "\(self.userData.username)")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                }
-                .padding(5.0)
-                .frame(width: screenWidth * 0.6)
-                HStack {
-                //Change BackgroundCardComponent to next view
-                NavigationLink(destination: BackgroundCardComponent()) {
-                    Text("Create game")
-                }
-                .padding(8.0)
-                .background(Color("Orange"))
-                .foregroundColor(Color("White"))
-                .cornerRadius(10)
-                //Change BackgroundCardComponent to next view
-                    NavigationLink(destination: GameScreen(color: Color.red)) {
-                    Text("Join game")
-
-                }
-                .padding(8.0)
-                .background(Color("Orange"))
-                .foregroundColor(Color("White"))
-                .cornerRadius(10)
-                }
-
-                Text("Choose if you want to join a game or create one.")
-                    .font(.footnote)
-                    .padding(.horizontal, 50.0)
-            }.foregroundColor(Color("Black"))
-        }.edgesIgnoringSafeArea(.all)
+        NavigationItemContainer {
+            ZStack {
+                BackgroundCardComponent()
+                VStack(spacing: 30) {
+                    HStack {
+                        Text("Hallo, " + "\(self.userData.username)")
+                            .font(.title)
+                    }
+                    .padding(5.0)
+                    .frame(width: screenWidth * 0.6)
+                    HStack {
+                        //Change BackgroundCardComponent to next view
+                        NavigationLink(destination: BackgroundCardComponent()) {
+                            Text("Create game")
+                        }
+                        .padding(8.0)
+                        .background(Color("Orange"))
+                        .foregroundColor(Color("White"))
+                        .cornerRadius(10)
+                        NavigationLink(destination: JoinPartyView()) {
+                            Text("Join game")
+                        }
+                        .padding(8.0)
+                        .background(Color("Orange"))
+                        .foregroundColor(Color("White"))
+                        .cornerRadius(10)
+                    }
+                    Text("Choose if you want to join a game or create one.")
+                        .font(.footnote)
+                        .padding(.horizontal, 50.0)
+                }.foregroundColor(Color("Black"))
+            }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

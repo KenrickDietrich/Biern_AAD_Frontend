@@ -18,6 +18,7 @@
 		EA4A1DA8251CA18000C96E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A1DA6251CA18000C96E20 /* LaunchScreen.storyboard */; };
 		EA4A1DB3251CA18100C96E20 /* BiernTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DB2251CA18100C96E20 /* BiernTests.swift */; };
 		EA4A1DBE251CA18100C96E20 /* BiernUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */; };
+		EA5F59F5252F07FC004265AF /* NavigationItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5F59F4252F07FC004265AF /* NavigationItemContainer.swift */; };
 		EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */; };
 		EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C78252220B400FEA51C /* JoinPartyView.swift */; };
 		EAAE1C81252223D000FEA51C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C80252223D000FEA51C /* UserView.swift */; };
@@ -59,6 +60,7 @@
 		EA4A1DB9251CA18100C96E20 /* BiernUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiernUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1DBD251CA18100C96E20 /* BiernUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiernUITests.swift; sourceTree = "<group>"; };
 		EA4A1DBF251CA18100C96E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA5F59F4252F07FC004265AF /* NavigationItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemContainer.swift; sourceTree = "<group>"; };
 		EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardComponent.swift; sourceTree = "<group>"; };
 		EAAE1C78252220B400FEA51C /* JoinPartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPartyView.swift; sourceTree = "<group>"; };
 		EAAE1C80252223D000FEA51C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
 				CF1F50BB25261AAD00F43E94 /* WaitingHostScreen.swift */,
 				EAAE1C80252223D000FEA51C /* UserView.swift */,
-				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
 				CFC422C22525BDB900228508 /* GameScreen.swift */,
 			);
 			path = Views;
@@ -171,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */,
+				EA5F59F4252F07FC004265AF /* NavigationItemContainer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -364,6 +366,7 @@
 				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
 				CFC422C32525BDB900228508 /* GameScreen.swift in Sources */,
 				EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */,
+				EA5F59F5252F07FC004265AF /* NavigationItemContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

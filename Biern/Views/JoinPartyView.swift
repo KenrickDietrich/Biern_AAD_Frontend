@@ -6,6 +6,7 @@ struct JoinPartyView: View {
     @State var color = Color("Red")
 
     var body: some View {
+        NavigationItemContainer {
             ZStack {
                 BackgroundCardComponent()
                 VStack(spacing: 30) {
@@ -17,8 +18,6 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    //Change BackgroundCardComponent to next view
-
                     NavigationLink(destination: GameScreen(color: self.color)) {
                         Text("Join game")
                     }
@@ -35,6 +34,7 @@ struct JoinPartyView: View {
 
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
