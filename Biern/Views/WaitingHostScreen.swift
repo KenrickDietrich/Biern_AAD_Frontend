@@ -6,16 +6,18 @@ struct WaitingHostScreen: View {
     var body: some View {
             ZStack {
                 BackgroundCardComponent()
-
+                
+                //create a VStack which contains the text and the button
                 VStack {
-                    Text("joeee")
+                    Text("The party is waiting for the next game")
+                    NavigationLink(destination: BackgroundCardComponent()) {
+                        Text("Next game").fontWeight(.medium)
+                    }
+                    .padding(8.0)
+                    .background(Color("Orange"))
+                    .foregroundColor(Color("White"))
+                    .cornerRadius(10)
                 }
             }.edgesIgnoringSafeArea(.all)
     }
 }
-
-//struct WaitingHostScreen_Preview: PreviewProvider {
-//    static var previews: some View {
-//        JoinPartyView()
-//    }
-//}
