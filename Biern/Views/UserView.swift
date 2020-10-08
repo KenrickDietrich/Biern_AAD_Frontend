@@ -12,7 +12,7 @@ struct UserView: View {
                 VStack(spacing: 30) {
                     HStack {
                         Text("Hallo, " + "\(self.userData.username)")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.title)
                     }
                     .padding(5.0)
                     .frame(width: screenWidth * 0.6)
