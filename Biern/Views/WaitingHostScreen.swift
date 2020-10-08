@@ -6,7 +6,7 @@ struct WaitingHostScreen: View {
     var body: some View {
             ZStack {
                 BackgroundCardComponent()
-                
+
                 //create a VStack which contains the text and the button
                 VStack {
                     Text("The party is waiting for the next game")
