@@ -33,7 +33,6 @@ struct UserView: View {
                         .foregroundColor(Color("White"))
                         .cornerRadius(10)
                     }
-
                     Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
                         .padding(.horizontal, 50.0)
