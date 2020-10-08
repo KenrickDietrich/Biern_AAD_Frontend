@@ -2,15 +2,22 @@ import SwiftUI
 
 struct ChooseGameView: View {
     @ObservedObject var data: DataProvider
-
+    
     var body: some View {
-        VStack {
-            List(self.data.games, id: \.gameId) {game in
-                GameListItem(game: game)
-            }
-        }.onAppear(perform: {
-            self.data.fetchGames()
-        })
+        Group {
+            BackgroundCardComponent()
+            
+            ZStack {
+                ScrollView {
+                    
+                    ForEach(self.data.games, id: \.gameId) {game in
+                        GameListItem(game: game)
+                    }
+                }
+            }.onAppear(perform: {
+                self.data.fetchGames()
+            })
+        }
     }
 }
 
