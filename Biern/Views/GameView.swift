@@ -7,7 +7,6 @@ struct GameView: View {
     let screenHeight = UIScreen.main.bounds.size.height
 
     var body: some View {
-
         ZStack {
             VStack {
                 Image("crown")
@@ -24,7 +23,6 @@ struct GameView: View {
             }
             //hide the navigation bar, users can't go back on this page
             .navigationBarHidden(true)
-            .navigationBarTitle(Text("Home"))
             .edgesIgnoringSafeArea([.top, .bottom])
         }
     }
