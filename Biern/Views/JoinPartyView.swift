@@ -18,7 +18,7 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    NavigationLink(destination: GameScreen(color: self.color)) {
+                    NavigationLink(destination: WaitingScreen()) {
                         Text("Join game")
                     }
                     .padding(8.0)
