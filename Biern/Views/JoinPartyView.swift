@@ -3,8 +3,8 @@ import SwiftUI
 struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @State var color = Color("Red")
     @ObservedObject var data: DataProvider
+    @State var input = ""
 
     var body: some View {
         NavigationItemContainer {
@@ -13,7 +13,7 @@ struct JoinPartyView: View {
                 VStack(spacing: 30) {
                     VStack {
                         Text("Party code:")
-                        TextField("", text: .constant(""))
+                        TextField("", text: self.$input)
                             .padding(5.0)
                             .background(Color("Grey"))
                             .cornerRadius(12)
