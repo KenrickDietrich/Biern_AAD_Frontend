@@ -7,13 +7,13 @@ struct PartyPeopleList: View {
     var body: some View {
         VStack {
             Text("Joined people")
+                .fontWeight(.bold)
             ScrollView {
                 ForEach(self.party.users, id: \.self) { user in
                     Text(user)
-                        .padding(2)
-
+                        .padding(1)
                 }.padding()
-            }.frame(width: screenWidth * 0.5, height: screenHeight * 0.2, alignment: .center)
+            }.frame(width: screenWidth * 0.5, height: screenHeight * 0.18, alignment: .center)
             .background(Color("Grey"))
             .cornerRadius(10)
         }
