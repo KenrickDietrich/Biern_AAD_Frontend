@@ -18,14 +18,12 @@ struct UserView: View {
                     .padding(5.0)
                     .frame(width: screenWidth * 0.6)
                     HStack {
-                        //Change BackgroundCardComponent to next view
                         NavigationButton {
-                            NavigationLink(destination: BackgroundCardComponent()) {
+                            NavigationLink(destination: PartyHostView(data: self.data)) {
                                 Text("Create game")
                                     .fontWeight(.medium)
                             }
                         }
-
                         NavigationButton {
                             NavigationLink(destination: JoinPartyView(data: self.data)) {
                                 Text("Join game")

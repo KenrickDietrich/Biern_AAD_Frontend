@@ -14,18 +14,19 @@ struct PartyUserView: View {
                         VStack {
                             Text("Username:")
                                 .fontWeight(.bold)
-                                .padding(2)
+                                .padding()
                             Text("Current Room:")
                                 .fontWeight(.bold)
                         }.padding()
                         VStack {
                             Text("Pietje")
-                                .padding(2)
+                                .padding()
                             Text("X56J1P12")
                         }.padding()
-                    }.padding(.top, 50.0)
+                    }
                     if !self.data.parties.isEmpty {
                         PartyPeopleList(party: self.data.parties[0])
+                            .padding()
                     }
                     HStack {
                         NavigationButton {
@@ -44,7 +45,7 @@ struct PartyUserView: View {
                             }
                         }
                     }.frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
-                }
+                }.offset(y: screenHeight * 0.05)
             }.edgesIgnoringSafeArea(.all)
             .onAppear(perform: {
                 self.data.fetchParties()

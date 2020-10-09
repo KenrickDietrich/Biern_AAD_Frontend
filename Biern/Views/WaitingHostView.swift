@@ -17,3 +17,9 @@ struct WaitingHostView: View {
         }.edgesIgnoringSafeArea(.all)
     }
 }
+
+struct WaitingHostView_Previews: PreviewProvider {
+    static var previews: some View {
+        WaitingHostView()
+    }
+}
