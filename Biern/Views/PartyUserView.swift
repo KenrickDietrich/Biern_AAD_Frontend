@@ -16,7 +16,7 @@ struct PartyUserView: View {
                                 .fontWeight(.bold)
                                 .padding(2)
                             Text("Current Room:")
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .fontWeight(.bold)
                         }.padding()
                         VStack {
                             Text("Pietje")
