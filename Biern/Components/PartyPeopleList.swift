@@ -14,7 +14,7 @@ struct PartyPeopleList: View {
 
                 }.padding()
             }.frame(width: screenWidth * 0.5, height: screenHeight * 0.2, alignment: .center)
-            .background(Color.gray)
+            .background(Color("Grey"))
             .cornerRadius(10)
         }
     }

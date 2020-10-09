@@ -32,7 +32,6 @@ struct LoginView: View {
                                 .fontWeight(.medium)
                         })
                     }
-                    
                 }
                 Text("Please enter an username, you can change this name later.")
                     .font(.footnote)
@@ -40,7 +39,7 @@ struct LoginView: View {
             }.foregroundColor(Color("Black"))
         }.edgesIgnoringSafeArea(.all)
     }
-    
+
     struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
             LoginView(userData: UserData(), data: DataProvider())
