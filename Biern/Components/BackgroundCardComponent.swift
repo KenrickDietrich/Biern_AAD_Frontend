@@ -18,15 +18,13 @@ struct BackgroundCardComponent: View {
                             .frame(width: screenWidth * 0.8, height: screenHeight * 0.75)
                             .cornerRadius(28)
                         ZStack {
-                        Circle()
-                            .fill(Color("White"))
-                            .frame(width: screenWidth * 0.5,
-                                   height: screenHeight * 0.5)
-                        Image("crown")
-                            .resizable()
-                            .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                            .offset(y: -screenHeight * 0.03)
-
+                            Circle()
+                                .fill(Color("White"))
+                                .frame(width: screenWidth * 0.5,
+                                       height: screenHeight * 0.5)
+                            Image("crown")
+                                .resizable()
+                                .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
                         }.offset(y: -screenHeight * 0.35)
                     }.offset(y: screenHeight * 0.05)
                     Spacer()
@@ -37,10 +35,7 @@ struct BackgroundCardComponent: View {
 
 struct BackgroundCardComponent_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            BackgroundCardComponent()
-            BackgroundCardComponent()
-                .previewDevice("iPhone 11 Pro Max")
-        }
+        BackgroundCardComponent()
+            .previewDevice("iPhone 11 Pro Max")
     }
 }

@@ -30,6 +30,8 @@
 		EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C78252220B400FEA51C /* JoinPartyView.swift */; };
 		EAAE1C81252223D000FEA51C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C80252223D000FEA51C /* UserView.swift */; };
 		EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C8625232BF600FEA51C /* UserData.swift */; };
+		EAF23FD325304B4B0074AC81 /* PartyPeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */; };
+		EAF23FE6253063860074AC81 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FE5253063860074AC81 /* NavigationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		EAAE1C78252220B400FEA51C /* JoinPartyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPartyView.swift; sourceTree = "<group>"; };
 		EAAE1C80252223D000FEA51C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		EAAE1C8625232BF600FEA51C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyPeopleList.swift; sourceTree = "<group>"; };
+		EAF23FE5253063860074AC81 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +123,6 @@
 			children = (
 				EA3B725F251DDB1700C82BFC /* LoginView.swift */,
 				CF1F50BB25261AAD00F43E94 /* WaitingHostView.swift */,
-				EAAE1C80252223D000FEA51C /* UserView.swift */,
 				EAAE1C78252220B400FEA51C /* JoinPartyView.swift */,
 				CFC422C22525BDB900228508 /* GameView.swift */,
 				CF8E0893252EFFAD00EFE6CB /* ChooseGameView.swift */,
@@ -199,6 +202,8 @@
 				EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */,
 				CF8E0898252F03F100EFE6CB /* GameListItem.swift */,
 				EA5F59F4252F07FC004265AF /* NavigationItemContainer.swift */,
+				EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */,
+				EAF23FE5253063860074AC81 /* NavigationButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -391,8 +396,10 @@
 				EAAE1C81252223D000FEA51C /* UserView.swift in Sources */,
 				CF8E089E252F04C100EFE6CB /* Game.swift in Sources */,
 				CF8E0899252F03F100EFE6CB /* GameListItem.swift in Sources */,
+				EAF23FE6253063860074AC81 /* NavigationButton.swift in Sources */,
 				EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */,
 				EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */,
+				EAF23FD325304B4B0074AC81 /* PartyPeopleList.swift in Sources */,
 				CF1F50BC25261AAD00F43E94 /* WaitingHostView.swift in Sources */,
 				EAA47F84252F5235000F99DB /* PartyUserView.swift in Sources */,
 				EA116322252F2AC6006571D6 /* DataProvider.swift in Sources */,

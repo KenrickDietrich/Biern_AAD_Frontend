@@ -9,7 +9,9 @@ class DataProvider: ObservableObject {
     }
 
     func fetchParties() {
-        self.parties.append(PartyData(partyCode: "party code"))
+        self.parties.append(PartyData(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"]))
+        self.parties.append(PartyData(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"]))
+        //self.parties[0].users = ["Jan", "Willem", "Bram", "Piet"]
         // fetch all parties
     }
 

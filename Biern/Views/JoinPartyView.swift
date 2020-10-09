@@ -4,6 +4,7 @@ struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @State var color = Color("Red")
+    @ObservedObject var data: DataProvider
 
     var body: some View {
         NavigationItemContainer {
@@ -18,13 +19,12 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    NavigationLink(destination: PartyUserView()) {
-                        Text("Join game")
+                    NavigationButton {
+                        NavigationLink(destination: PartyUserView(data: self.data)) {
+                            Text("Join game")
+                                .fontWeight(.medium)
+                        }
                     }
-                    .padding(8.0)
-                    .background(Color("Orange"))
-                    .foregroundColor(Color("White"))
-                    .cornerRadius(10)
                     Text("""
                         Enter the party code that you want to join.
                         Note: The party codes are case sensitive.
@@ -40,6 +40,6 @@ struct JoinPartyView: View {
 
 struct JoinPartyView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinPartyView()
+        JoinPartyView(data: DataProvider())
     }
 }

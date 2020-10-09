@@ -6,7 +6,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            LoginView(userData: self.userData)
+            LoginView(userData: self.userData, data: self.data)
         }
     }
 }
