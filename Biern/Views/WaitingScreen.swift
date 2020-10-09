@@ -13,7 +13,6 @@ struct WaitingScreen: View {
                 Image("crown")
                     .resizable()
                     .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
-                    .offset(y: screenHeight * 0.35)
                 VStack {
                     Text("Click as fast as you can!")
                         .font(.title2)
