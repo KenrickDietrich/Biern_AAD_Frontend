@@ -17,8 +17,8 @@ struct PartyUserView: View {
                         Text("Current Room:")
                         Text("X56J1P12")
                     }
-                    ForEach(self.data.parties, id: \.partyId) { party in  PartyPeopleList(party: party)
-
+                    if !self.data.parties.isEmpty {
+                        PartyPeopleList(party: self.data.parties[0])
                     }
                     HStack {
                         NavigationButton {
