@@ -1,7 +1,7 @@
 import Foundation
 
 class DataProvider: ObservableObject {
-    @Published var parties: [PartyData] = []
+    @Published var parties: [Party] = []
     @Published var games = [Game]()
 
     init () {
@@ -9,8 +9,10 @@ class DataProvider: ObservableObject {
     }
 
     func fetchParties() {
-        self.parties.append(PartyData(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"]))
-        self.parties.append(PartyData(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"]))
+        self.parties.append(Party(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"],
+                                  settings: Setting(difficulty: 2)))
+        self.parties.append(Party(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"],
+                                  settings: Setting(difficulty: 3)))
         // fetch all parties
     }
 

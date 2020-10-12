@@ -3,7 +3,7 @@ import SwiftUI
 struct PartyPeopleList: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var party: PartyData
+    @ObservedObject var party: Party
     var body: some View {
         VStack {
             Text("Joined people")
@@ -22,6 +22,8 @@ struct PartyPeopleList: View {
 
 struct PartyPeopleList_Previews: PreviewProvider {
     static var previews: some View {
-        PartyPeopleList(party: PartyData(partyCode: "joe joe", users: ["Jan", "Willem", "Bram", "Piet"]))
+        PartyPeopleList(party: Party(partyCode: "joe joe",
+                                     users: ["Jan", "Willem", "Bram", "Piet"],
+                                     settings: Setting(difficulty: 3)))
     }
 }

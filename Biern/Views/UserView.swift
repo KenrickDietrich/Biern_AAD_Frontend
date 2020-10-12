@@ -3,7 +3,7 @@ import SwiftUI
 struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var userData: UserData
+    @ObservedObject var userData: User
     @ObservedObject var data: DataProvider
 
     var body: some View {
@@ -43,6 +43,6 @@ struct UserView: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(userData: UserData(), data: DataProvider())
+        UserView(userData: User(), data: DataProvider())
     }
 }

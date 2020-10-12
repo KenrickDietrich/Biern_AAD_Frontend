@@ -25,7 +25,7 @@ struct PartyHostView: View {
                         PartyPeopleList(party: self.data.parties[0])
                             .padding()
                     }
-                    
+
                     HStack {
                         NavigationLink(destination: ChooseGameView(data: self.data)) {
                             VStack {
