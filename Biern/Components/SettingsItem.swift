@@ -6,7 +6,7 @@ struct SettingsItem: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(self.setting.title)
-                    .fontWeight(.medium)
+                    .fontWeight(.bold)
                 Text(self.setting.description)
                     .font(/*@START_MENU_TOKEN@*/.callout/*@END_MENU_TOKEN@*/)
                     .multilineTextAlignment(.leading)
