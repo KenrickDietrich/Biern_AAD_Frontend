@@ -14,5 +14,4 @@ class PartyData: ObservableObject {
         self.partyCode = partyCode
         self.users = users
     }
-
 }

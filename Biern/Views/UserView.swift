@@ -25,14 +25,12 @@ struct UserView: View {
                                     .fontWeight(.medium)
                             }
                         }
-
                         NavigationButton {
                             NavigationLink(destination: JoinPartyView(data: self.data)) {
                                 Text("Join game")
                                     .fontWeight(.medium)
                             }
                         }
-
                     }
                     Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
