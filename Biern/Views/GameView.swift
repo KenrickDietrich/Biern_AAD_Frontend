@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GameScreen: View {
+struct GameView: View {
     @State var color: Color
 
     let screenWidth = UIScreen.main.bounds.size.width
@@ -21,9 +21,12 @@ struct GameScreen: View {
                         color = Color("Green")
                     }
             }
-            //hide the navigation bar, users can't go back on this page
-            .navigationBarHidden(true)
-            .edgesIgnoringSafeArea([.top, .bottom])
-        }
+        }.navigationBarBackButtonHidden(true)
+    }
+}
+
+struct GameView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameView(color: Color("Green"))
     }
 }
