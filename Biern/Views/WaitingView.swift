@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WaitingScreen: View {
+struct WaitingView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @State var progressValue: Int = 0
@@ -24,7 +24,7 @@ struct WaitingScreen: View {
                 Spacer()
                 Text("Waiting for the next round to start...")
                 ProgressBar(value: self.$progressValue)
-                NavigationLink(destination: GameScreen(color: Color("Green")), isActive: $isActive) {}
+                NavigationLink(destination: GameView(color: Color("Green")), isActive: $isActive) {}
 
             }.onAppear(perform: {
                 startProgress()
@@ -50,6 +50,6 @@ struct WaitingScreen: View {
 
 struct WaitingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WaitingScreen()
+        WaitingView()
     }
 }
