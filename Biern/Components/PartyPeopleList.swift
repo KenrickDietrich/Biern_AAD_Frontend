@@ -22,8 +22,6 @@ struct PartyPeopleList: View {
 
 struct PartyPeopleList_Previews: PreviewProvider {
     static var previews: some View {
-        PartyPeopleList(party: Party(partyCode: "joe joe",
-                                     users: ["Jan", "Willem", "Bram", "Piet"],
-                                     settings: Setting(difficulty: 3)))
+        PartyPeopleList(party: Party())
     }
 }

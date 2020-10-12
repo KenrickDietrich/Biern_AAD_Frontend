@@ -6,10 +6,8 @@ class DataProvider: ObservableObject {
 
     func fetchParties() {
         // fetch all parties from API
-        self.parties.append(Party(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"],
-                                  settings: Setting(difficulty: 2)))
-        self.parties.append(Party(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"],
-                                  settings: Setting(difficulty: 3)))
+        self.parties.append(Party())
+        self.parties.append(Party())
     }
 
     func fetchGames() {

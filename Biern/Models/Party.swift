@@ -7,12 +7,15 @@ class Party: ObservableObject {
     @Published var users: [String] = []
     @Published var isActive: Bool = false
     // Change when both settings and results model is made
-    @Published var settings: Setting
+    @Published var settings: Settings = Settings()
     @Published var results: String = ""
 
-    init(partyCode: String, users: [String], settings: Setting) {
-        self.partyCode = partyCode
-        self.users = users
-        self.settings = settings
+    init() {
+        self.partyCode = randomString(length: 6)
+    }
+
+    func randomString(length: Int) -> String {
+      let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map { _ in letters.randomElement()! })
     }
 }

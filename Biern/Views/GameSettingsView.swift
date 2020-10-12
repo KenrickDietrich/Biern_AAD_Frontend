@@ -3,19 +3,33 @@ import SwiftUI
 struct GameSettingsView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var party: Party
+    @ObservedObject var settings: Settings
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationItemContainer {
             ZStack {
                 BackgroundCardComponent()
                 VStack {
-                    Text("Party code:")
+                    Text("Choose game settings")
                         .fontWeight(.bold)
                         .padding(2)
-                    if(self.party.settings.difficulty === 3){
-                        Text("It is 3")
+                        .padding(.top, 100.0)
+                    ScrollView {
+                        ForEach(self.settings.settings, id: \.settingId) { setting in
+                            SettingsItem(setting: setting)
+                        }
+                    }.frame(width: screenWidth * 0.65, height: screenHeight * 0.5, alignment: .center)
+                    .padding()
+                    NavigationButton {
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("Save")
+                                .fontWeight(.medium)
+                        })
                     }
                 }
+
             }
         }
     }
@@ -23,7 +37,6 @@ struct GameSettingsView: View {
 
 struct GameSettingsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GameSettingsView(party: Party(partyCode: "party code", users: ["Jan", "Willem", "Bram", "Piet"],
-                                        settings: Setting(difficulty: 3)))
+        GameSettingsView(settings: Settings())
     }
 }
