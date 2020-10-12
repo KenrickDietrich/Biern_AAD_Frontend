@@ -31,6 +31,7 @@
 		EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAE1C8625232BF600FEA51C /* UserData.swift */; };
 		EAF23FD325304B4B0074AC81 /* PartyPeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */; };
 		EAF23FE6253063860074AC81 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FE5253063860074AC81 /* NavigationButton.swift */; };
+		EAF23FEE253092370074AC81 /* PartyHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FED253092370074AC81 /* PartyHostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		EAAE1C8625232BF600FEA51C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyPeopleList.swift; sourceTree = "<group>"; };
 		EAF23FE5253063860074AC81 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		EAF23FED253092370074AC81 /* PartyHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				CF8E0893252EFFAD00EFE6CB /* ChooseGameView.swift */,
 				EAA47F83252F5235000F99DB /* PartyUserView.swift */,
 				EAAE1C80252223D000FEA51C /* UserView.swift */,
+				EAF23FED253092370074AC81 /* PartyHostView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				CF8E0899252F03F100EFE6CB /* GameListItem.swift in Sources */,
 				EAF23FE6253063860074AC81 /* NavigationButton.swift in Sources */,
 				EAAE1C8725232BF600FEA51C /* UserData.swift in Sources */,
+				EAF23FEE253092370074AC81 /* PartyHostView.swift in Sources */,
 				EA943AC7251CD47C00CAB20C /* BackgroundCardComponent.swift in Sources */,
 				EAF23FD325304B4B0074AC81 /* PartyPeopleList.swift in Sources */,
 				CF1F50BC25261AAD00F43E94 /* WaitingHostView.swift in Sources */,
