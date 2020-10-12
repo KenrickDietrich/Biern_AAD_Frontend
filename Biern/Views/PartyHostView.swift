@@ -4,6 +4,7 @@ struct PartyHostView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var data: DataProvider
+    @State var party = Party()
     var body: some View {
         NavigationItemContainer {
             ZStack {
@@ -13,7 +14,7 @@ struct PartyHostView: View {
                         Text("Party code:")
                             .fontWeight(.bold)
                             .padding(2)
-                        Text("X56J1P12")
+                        Text(party.partyCode)
                     }.padding()
                     HStack {
                         Image("question")
@@ -37,7 +38,7 @@ struct PartyHostView: View {
                             }.padding()
                         }
                         Spacer()
-                        NavigationLink(destination: PartyUserView(data: self.data)) {
+                        NavigationLink(destination: GameSettingsView(settings: self.party.settings)) {
                             VStack {
                                 Image("stopwatch")
                                 Text("Game settings")
