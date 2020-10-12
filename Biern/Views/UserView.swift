@@ -4,6 +4,7 @@ struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var userData: UserData
+    @ObservedObject var data: DataProvider
 
     var body: some View {
         NavigationItemContainer {
@@ -18,24 +19,22 @@ struct UserView: View {
                     .frame(width: screenWidth * 0.6)
                     HStack {
                         //Change BackgroundCardComponent to next view
-                        NavigationLink(destination: BackgroundCardComponent()) {
-                            Text("Create game")
+                        NavigationButton {
+                            NavigationLink(destination: BackgroundCardComponent()) {
+                                Text("Create game")
+                                    .fontWeight(.medium)
+                            }
                         }
-                        .padding(8.0)
-                        .background(Color("Orange"))
-                        .foregroundColor(Color("White"))
-                        .cornerRadius(10)
-                        NavigationLink(destination: JoinPartyView()) {
-                            Text("Join game")
+                        NavigationButton {
+                            NavigationLink(destination: JoinPartyView(data: self.data)) {
+                                Text("Join game")
+                                    .fontWeight(.medium)
+                            }
                         }
-                        .padding(8.0)
-                        .background(Color("Orange"))
-                        .foregroundColor(Color("White"))
-                        .cornerRadius(10)
                     }
                     Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
-                        .padding(.horizontal, 50.0)
+                        .padding(.horizontal, 80.0)
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
@@ -44,6 +43,6 @@ struct UserView: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(userData: UserData())
+        UserView(userData: UserData(), data: DataProvider())
     }
 }
