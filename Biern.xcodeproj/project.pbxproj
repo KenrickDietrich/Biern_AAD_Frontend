@@ -16,6 +16,7 @@
 		EA066EE425343EBE00FEF764 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA066EE325343EBE00FEF764 /* Setting.swift */; };
 		EA116322252F2AC6006571D6 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA116321252F2AC6006571D6 /* DataProvider.swift */; };
 		EA116327252F2B18006571D6 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA116326252F2B18006571D6 /* Party.swift */; };
+		EA1B31752530A1E200CA8E03 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1B31742530A1E200CA8E03 /* ProgressBar.swift */; };
 		EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3B725F251DDB1700C82BFC /* LoginView.swift */; };
 		EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */; };
 		EA4A1D9E251CA17B00C96E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A1D9D251CA17B00C96E20 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		EAF23FD325304B4B0074AC81 /* PartyPeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */; };
 		EAF23FE6253063860074AC81 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FE5253063860074AC81 /* NavigationButton.swift */; };
 		EAF23FEE253092370074AC81 /* PartyHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FED253092370074AC81 /* PartyHostView.swift */; };
+		EAF23FF625309CC60074AC81 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF23FF525309CC60074AC81 /* WaitingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 		EA066EE325343EBE00FEF764 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		EA116321252F2AC6006571D6 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		EA116326252F2B18006571D6 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		EA1B31742530A1E200CA8E03 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		EA3B725F251DDB1700C82BFC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EA4A1D98251CA17B00C96E20 /* Biern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A1D9B251CA17B00C96E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyPeopleList.swift; sourceTree = "<group>"; };
 		EAF23FE5253063860074AC81 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		EAF23FED253092370074AC81 /* PartyHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyHostView.swift; sourceTree = "<group>"; };
+		EAF23FF525309CC60074AC81 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 				CF8E0893252EFFAD00EFE6CB /* ChooseGameView.swift */,
 				EAA47F83252F5235000F99DB /* PartyUserView.swift */,
 				EAAE1C80252223D000FEA51C /* UserView.swift */,
+				EAF23FF525309CC60074AC81 /* WaitingView.swift */,
 				EAF23FED253092370074AC81 /* PartyHostView.swift */,
 				EA066ED825343AFB00FEF764 /* GameSettingsView.swift */,
 			);
@@ -199,6 +204,7 @@
 				EA943AC6251CD47C00CAB20C /* BackgroundCardComponent.swift */,
 				CF8E0898252F03F100EFE6CB /* GameListItem.swift */,
 				EA5F59F4252F07FC004265AF /* NavigationItemContainer.swift */,
+				EA1B31742530A1E200CA8E03 /* ProgressBar.swift */,
 				EAF23FD225304B4B0074AC81 /* PartyPeopleList.swift */,
 				EAF23FE5253063860074AC81 /* NavigationButton.swift */,
 			);
@@ -389,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA4A1D9C251CA17B00C96E20 /* AppDelegate.swift in Sources */,
+				EAF23FF625309CC60074AC81 /* WaitingView.swift in Sources */,
 				CF8E0894252EFFAD00EFE6CB /* ChooseGameView.swift in Sources */,
 				EAAE1C81252223D000FEA51C /* UserView.swift in Sources */,
 				CF8E089E252F04C100EFE6CB /* Game.swift in Sources */,
@@ -405,6 +412,7 @@
 				EA3B7260251DDB1700C82BFC /* LoginView.swift in Sources */,
 				EA116327252F2B18006571D6 /* Party.swift in Sources */,
 				EA4A1DA0251CA17B00C96E20 /* ContentView.swift in Sources */,
+				EA1B31752530A1E200CA8E03 /* ProgressBar.swift in Sources */,
 				CFC422C32525BDB900228508 /* GameView.swift in Sources */,
 				EA066ED925343AFB00FEF764 /* GameSettingsView.swift in Sources */,
 				EAAE1C79252220B400FEA51C /* JoinPartyView.swift in Sources */,

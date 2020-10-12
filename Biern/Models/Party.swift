@@ -15,5 +15,4 @@ class Party: ObservableObject {
         self.users = users
         self.settings = settings
     }
-
 }

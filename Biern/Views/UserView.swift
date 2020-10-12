@@ -30,7 +30,6 @@ struct UserView: View {
                                     .fontWeight(.medium)
                             }
                         }
-
                     }
                     Text("Choose if you want to join a game or create one.")
                         .font(.footnote)
