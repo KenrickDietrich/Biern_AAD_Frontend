@@ -46,7 +46,6 @@ struct GameSettingsView: View {
                         })
                     }
                 }
-
             }.onAppear(perform: {
                 self.selected = self.settings.difficulty
             })
