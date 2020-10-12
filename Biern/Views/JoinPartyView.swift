@@ -3,7 +3,8 @@ import SwiftUI
 struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @State var color = Color("Red")
+    @ObservedObject var data: DataProvider
+    @State var input = ""
 
     var body: some View {
         NavigationItemContainer {
@@ -12,21 +13,18 @@ struct JoinPartyView: View {
                 VStack(spacing: 30) {
                     VStack {
                         Text("Party code:")
-                        TextField("", text: .constant(""))
+                        TextField("", text: self.$input)
                             .padding(5.0)
                             .background(Color("Grey"))
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    //Change BackgroundCardComponent to next view
-
-                    NavigationLink(destination: GameView(color: self.color)) {
-                        Text("Join game")
+                    NavigationButton {
+                        NavigationLink(destination: PartyUserView(data: self.data)) {
+                            Text("Join game")
+                                .fontWeight(.medium)
+                        }
                     }
-                    .padding(8.0)
-                    .background(Color("Orange"))
-                    .foregroundColor(Color("White"))
-                    .cornerRadius(10)
                     Text("""
                         Enter the party code that you want to join.
                         Note: The party codes are case sensitive.
@@ -42,6 +40,6 @@ struct JoinPartyView: View {
 
 struct JoinPartyView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinPartyView()
+        JoinPartyView(data: DataProvider())
     }
 }

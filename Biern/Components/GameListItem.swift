@@ -25,6 +25,6 @@ struct GameListItem: View {
 
 struct GameListItem_Previews: PreviewProvider {
     static var previews: some View {
-        GameListItem(game: Game(name: "game name", rules: "de regels van het spel"))
+        GameListItem(game: Game(gameId: 5, name: "game name", rules: "de regels van het spel"))
     }
 }
