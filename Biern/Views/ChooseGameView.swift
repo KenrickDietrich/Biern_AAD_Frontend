@@ -18,7 +18,6 @@ struct ChooseGameView: View {
                         ForEach(self.data.games, id: \.gameId) {game in
                             Button(action: {
                                 addGame(game: game)
-                                print(self.party.selectedGames)
                             }, label: {
                                 GameListItem(game: game).padding([.top, .leading, .trailing])
                             })
