@@ -28,7 +28,7 @@ struct PartyHostView: View {
                     }
 
                     HStack {
-                        NavigationLink(destination: ChooseGameView(data: self.data)) {
+                        NavigationLink(destination: ChooseGameView(data: self.data, party: self.party)) {
                             VStack {
                                 Image("games")
                                 Text("Games")

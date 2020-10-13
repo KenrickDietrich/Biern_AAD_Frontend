@@ -7,6 +7,7 @@ class Party: ObservableObject {
     @Published var users: [String] = []
     @Published var isActive: Bool = false
     // Change when both settings and results model is made
+    @Published var selectedGames: [Game] = []
     @Published var settings: Settings = Settings()
     @Published var results: String = ""
 
