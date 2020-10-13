@@ -16,16 +16,15 @@ struct GameListItem: View {
                     .padding(10)
                     .font(.title3)
             }
+            .foregroundColor(Color("Black"))
             .background(Color("Grey"))
             .cornerRadius(25.0)
-            .padding([.top, .leading, .trailing])
             .overlay(
                 ZStack {
                     Rectangle()
                         .fill(Color("Green").opacity(0.5))
                         .frame(width: screenWidth * 0.4, height: screenWidth * 0.4)
                         .cornerRadius(25)
-                        .offset(y: 10)
                     Image("check")
                         .resizable()
                         .frame(width: 150, height: 150)
@@ -42,9 +41,9 @@ struct GameListItem: View {
                     .padding(10)
                     .font(.title3)
             }
+            .foregroundColor(Color("Black"))
             .background(Color("Grey"))
             .cornerRadius(25.0)
-            .padding([.top, .leading, .trailing])
         }
     }
 }

@@ -12,18 +12,18 @@ struct ChooseGameView: View {
                 BackgroundCardComponent()
                 VStack {
                     Text("Choose games")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title2)
                         .fontWeight(.medium)
-                    ScrollView {
+                    ScrollView(.vertical) {
                         ForEach(self.data.games, id: \.gameId) {game in
                             Button(action: {
                                 addGame(game: game)
                                 print(self.party.selectedGames)
                             }, label: {
-                                GameListItem(game: game)
+                                GameListItem(game: game).padding([.top, .leading, .trailing])
                             })
                         }
-                    }.frame(width: screenWidth * 0.9, height: screenHeight * 0.5)
+                    }.frame(width: screenWidth, height: screenHeight * 0.5)
                     NavigationButton {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
@@ -33,7 +33,9 @@ struct ChooseGameView: View {
                         })
                     }.padding()
                 }.padding(.top, 100.0)
-            }.onAppear(perform: {
+
+            }.edgesIgnoringSafeArea(.all)
+            .onAppear(perform: {
                 self.data.fetchGames()
             })
         }

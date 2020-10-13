@@ -46,7 +46,8 @@ struct GameSettingsView: View {
                         })
                     }
                 }
-            }.onAppear(perform: {
+            }.edgesIgnoringSafeArea(.all)
+            .onAppear(perform: {
                 self.selected = self.settings.difficulty
             })
         }

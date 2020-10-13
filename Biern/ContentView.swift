@@ -19,7 +19,6 @@ struct ContentView_Previews: PreviewProvider {
 
             ContentView()
                 .previewDevice(PreviewDevice(rawValue: "iPhone XS Max"))
-                .environment(\.colorScheme, .light)
                 .previewDisplayName("iPhone XS Max")
         }
     }
