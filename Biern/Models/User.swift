@@ -1,6 +1,6 @@
 import Foundation
 
-class UserData: ObservableObject {
+class User: ObservableObject {
     @Published var username: String = "" {
         didSet {
             if username.count > 12 {

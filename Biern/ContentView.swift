@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var userData = UserData()
+    @StateObject var userData = User()
     @StateObject var data = DataProvider()
 
     var body: some View {

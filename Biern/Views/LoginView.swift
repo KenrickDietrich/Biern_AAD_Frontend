@@ -3,7 +3,7 @@ import SwiftUI
 struct LoginView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var userData: UserData
+    @ObservedObject var userData: User
     @ObservedObject var data: DataProvider
     @State var input = ""
     @State var isActive = false
@@ -43,7 +43,7 @@ struct LoginView: View {
 
     struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
-            LoginView(userData: UserData(), data: DataProvider())
+            LoginView(userData: User(), data: DataProvider())
         }
     }
 }
