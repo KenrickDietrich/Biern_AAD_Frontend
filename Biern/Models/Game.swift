@@ -1,14 +1,19 @@
 import UIKit
 
 class Game: ObservableObject {
-    @Published var gameId: Int
+    @Published var gameId = UUID()
     @Published var name: String = ""
     @Published var rules: String = ""
-//    @Published fileprivate var image: String
+    @Published var selected: Bool = false
 
-    init(gameId: Int, name: String, rules: String) {
-        self.gameId = gameId
+    init(name: String, rules: String) {
         self.name = name
         self.rules = rules
+    }
+}
+
+extension Game: Equatable {
+    static func == (lhs: Game, rhs: Game) -> Bool {
+        return lhs.gameId == rhs.gameId
     }
 }
