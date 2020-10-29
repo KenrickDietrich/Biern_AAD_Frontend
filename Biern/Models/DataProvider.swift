@@ -3,6 +3,7 @@ import Foundation
 class DataProvider: ObservableObject {
     @Published var parties: [Party] = []
     @Published var games = [Game]()
+    @Published var currentParty = Party()
 
     func fetchParties() {
         // fetch all parties from API

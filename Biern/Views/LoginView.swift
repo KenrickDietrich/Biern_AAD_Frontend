@@ -26,6 +26,7 @@ struct LoginView: View {
                     NavigationButton {
                         Button(action: {
                             self.userData.username = self.input
+                            self.userData.createUser()
                             self.isActive = true
                         }, label: {
                             Text("Next")

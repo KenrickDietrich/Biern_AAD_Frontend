@@ -4,7 +4,9 @@ struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var data: DataProvider
+    @ObservedObject var userData: User
     @State var input = ""
+    @State var isActive = false
 
     var body: some View {
         NavigationItemContainer {
@@ -19,10 +21,15 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    NavigationButton {
-                        NavigationLink(destination: PartyUserView(data: self.data)) {
-                            Text("Join game")
-                                .fontWeight(.medium)
+                    NavigationLink(destination: PartyUserView(data: self.data, userData: self.userData),
+                                   isActive: $isActive) {
+                        NavigationButton {
+                            Button(action: {
+                                self.isActive = true
+                            }, label: {
+                                Text("Join game")
+                                    .fontWeight(.medium)
+                            })
                         }
                     }
                     Text("""
@@ -40,6 +47,6 @@ struct JoinPartyView: View {
 
 struct JoinPartyView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinPartyView(data: DataProvider())
+        JoinPartyView(data: DataProvider(), userData: User())
     }
 }
