@@ -4,7 +4,9 @@ struct PartyUserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var data: DataProvider
+    @ObservedObject var userData: User
     @Environment(\.presentationMode) var presentationMode
+    @State var isReady = false
     var body: some View {
         NavigationItemContainer {
             ZStack {
@@ -19,7 +21,7 @@ struct PartyUserView: View {
                                 .fontWeight(.bold)
                         }.padding()
                         VStack {
-                            Text("Pietje")
+                            Text("\(self.userData.username)")
                                 .padding()
                             Text("X56J1P12")
                         }.padding()
@@ -38,10 +40,27 @@ struct PartyUserView: View {
                             })
                         }
                         Spacer()
-                        NavigationButton {
-                            NavigationLink(destination: PartyUserView(data: self.data)) {
-                                Text("Not Ready")
-                                    .fontWeight(.medium)
+                        if isReady {
+                            NavigationButton {
+                                Button(action: {
+                                    self.isReady.toggle()
+                                    self.userData.isReady.toggle()
+                                }, label: {
+                                    Text("Ready")
+                                        .fontWeight(.medium)
+                                        .animation(.spring())
+                                })
+                            }
+                        } else {
+                            NavigationButton {
+                                Button(action: {
+                                    self.isReady.toggle()
+                                    self.userData.isReady.toggle()
+                                }, label: {
+                                    Text("Not Ready")
+                                        .fontWeight(.medium)
+                                        .animation(.spring())
+                                })
                             }
                         }
                     }.frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
@@ -56,6 +75,6 @@ struct PartyUserView: View {
 
 struct PartyUserView_Previews: PreviewProvider {
     static var previews: some View {
-        PartyUserView(data: DataProvider())
+        PartyUserView(data: DataProvider(), userData: User())
     }
 }
