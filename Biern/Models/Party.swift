@@ -19,4 +19,5 @@ class Party: ObservableObject {
       let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
       return String((0..<length).map { _ in letters.randomElement()! })
     }
+
 }

@@ -34,9 +34,6 @@ struct ChooseGameView: View {
                 }.padding(.top, 100.0)
 
             }.edgesIgnoringSafeArea(.all)
-            .onAppear(perform: {
-                self.data.fetchGames()
-            })
         }
     }
     func addGame(game: Game) {

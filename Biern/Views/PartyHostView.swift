@@ -22,8 +22,8 @@ struct PartyHostView: View {
                         Image("share")
                             .padding(.horizontal)
                     }
-                    if !self.data.parties.isEmpty {
-                        PartyPeopleList(party: self.data.parties[0])
+                    if !self.data.party.users.isEmpty {
+                        PartyPeopleList(party: self.data.party)
                             .padding()
                     }
 
@@ -56,9 +56,6 @@ struct PartyHostView: View {
                     }.padding()
                 }.offset(y: screenHeight * 0.05)
             }.edgesIgnoringSafeArea(.all)
-            .onAppear(perform: {
-                self.data.fetchParties()
-            })
         }
     }
 }
