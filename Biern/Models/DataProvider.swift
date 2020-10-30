@@ -6,17 +6,19 @@ class DataProvider: ObservableObject {
     @Published var user = User()
     @Published var URL: String = "https://drinkapi.herokuapp.com/"
 
-    func createRoute(endPoint: String) throws -> URLRequest {
+    // creates a route to api
+    func createRoute(endPoint: String, httpMethod: String) throws -> URLRequest {
         guard let url = Foundation.URL(string: self.URL + endPoint) else {
             throw HTTPError.cantCreateRoute
         }
-        return URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = httpMethod
+        return request
     }
 
     func createUser() {
-        var createUserRequest = try? self.createRoute(endPoint: "user")
-        createUserRequest?.httpMethod = "POST"
-        createUserRequest?.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        var createUserRequest = try? self.createRoute(endPoint: "user", httpMethod: "POST")
         let newUser: [String: Any] = ["username": self.user.username, "is_ready": false]
         let jsonUser: Data
         do {
@@ -38,38 +40,40 @@ class DataProvider: ObservableObject {
                 print("Error: did not receive data")
                 return
             }
-
             // parse the result as JSON
             do {
-              guard let receivedUser = try JSONSerialization.jsonObject(with: responseData,
-                options: []) as? [String: Any] else {
-                  print("Error: Could not get JSON from responseData as dictionary")
-                  return
-              }
-              // check if recieved object has id
-              guard let userId = receivedUser["id"] as? String else {
-                return
-              }
-              // set new user id of user
-              self.user.userId = userId
+                guard let receivedUser = try JSONSerialization.jsonObject(with: responseData) as? [String: Any] else {
+                    print("Error: Could not get JSON from responseData as dictionary")
+                    return
+                }
+                // check if recieved object has id
+                guard let userId = receivedUser["id"] as? String else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    // set new user id of user
+                    self.user.userId = userId
+                }
             } catch {
-              print("Error: parsing response from POST on /user")
-              return
+                print("Error: parsing response from POST on /user")
+                return
             }
         }
         task.resume()
     }
 
     func createParty() {
-        var createPartyRequest = try? self.createRoute(endPoint: "party")
-        createPartyRequest?.httpMethod = "POST"
-        createPartyRequest?.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let newParty: [String: Any] = ["host_id": self.user,
+        var createPartyRequest = try? self.createRoute(endPoint: "party", httpMethod: "POST")
+        let newParty: [String: Any] = ["host_id": self.user.userId,
                                        "party_code": self.party.partyCode,
                                        "is_active": self.party.isActive,
-                                       "settings": Settings(),
-                                       "users": [self.user],
-                                       "selected_games": []
+                                       "settings": ["difficulty": self.party.settings.difficulty,
+                                                    "show_names": self.party.settings.showNames],
+                                       "users": [["id": self.user.userId,
+                                                  "username": self.user.username,
+                                                  "is_ready": self.user.isReady]],
+                                       "selected_games": [["name": self.party.selectedGames[0].name,
+                                                           "rules": self.party.selectedGames[0].rules]]
         ]
         let jsonUser: Data
         do {
@@ -85,8 +89,36 @@ class DataProvider: ObservableObject {
                 print("Error: calling POST on /party")
                 return
             }
-            guard data != nil else {
+            guard let responseData = data else {
                 print("Error: did not receive data")
+                return
+            }
+
+            // parse the result as JSON
+            do {
+                guard let receivedParty = try JSONSerialization.jsonObject(with: responseData) as? [String: Any] else {
+                    print("Error: Could not get JSON from responseData as dictionary")
+                    return
+                }
+                // check if recieved object has id
+                guard let partyId = receivedParty["id"] as? String else {
+                    return
+                }
+                // check if recieved object has id
+                guard let partyCode = receivedParty["party_code"] as? String else {
+                    return
+                }
+                // check if recieved object has id
+                guard let partyUsers = receivedParty["users"] as? [User] else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.party.partyId = partyId
+                    self.party.partyCode = partyCode
+                    self.party.users = partyUsers
+                }
+            } catch {
+                print("Error: parsing response from POST on /user")
                 return
             }
         }

@@ -22,6 +22,7 @@ struct UserView: View {
                             NavigationButton {
                                 Button(action: {
                                     self.data.createParty()
+                                    self.isActive = true
                                 }, label: {
                                     Text("Create game")
                                         .fontWeight(.medium)

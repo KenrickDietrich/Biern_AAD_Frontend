@@ -4,7 +4,6 @@ struct ChooseGameView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var data: DataProvider
-    @ObservedObject var party: Party
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationItemContainer {
@@ -37,15 +36,15 @@ struct ChooseGameView: View {
         }
     }
     func addGame(game: Game) {
-        if self.party.selectedGames.isEmpty {
-            self.party.selectedGames.append(game)
+        if self.data.party.selectedGames.isEmpty {
+            self.data.party.selectedGames.append(game)
             game.selected = true
-        } else if self.party.selectedGames.contains(game) {
-            let index = self.party.selectedGames.firstIndex(of: game)!
-            self.party.selectedGames.remove(at: index)
+        } else if self.data.party.selectedGames.contains(game) {
+            let index = self.data.party.selectedGames.firstIndex(of: game)!
+            self.data.party.selectedGames.remove(at: index)
             game.selected = false
         } else {
-            self.party.selectedGames.append(game)
+            self.data.party.selectedGames.append(game)
             game.selected = true
         }
     }
@@ -53,6 +52,6 @@ struct ChooseGameView: View {
 
 struct ChooseGameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseGameView(data: DataProvider(), party: Party())
+        ChooseGameView(data: DataProvider())
     }
 }

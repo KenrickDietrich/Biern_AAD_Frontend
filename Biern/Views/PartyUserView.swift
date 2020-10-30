@@ -22,13 +22,11 @@ struct PartyUserView: View {
                         VStack {
                             Text("\(self.data.user.username)")
                                 .padding()
-                            Text("X56J1P12")
+                            Text("\(self.data.party.partyCode)")
                         }.padding()
                     }
-                    if !self.data.party.users.isEmpty {
-                        PartyPeopleList(party: self.data.party)
-                            .padding()
-                    }
+                    PartyPeopleList(party: self.data.party)
+                        .padding()
                     HStack {
                         NavigationButton {
                             Button(action: {
