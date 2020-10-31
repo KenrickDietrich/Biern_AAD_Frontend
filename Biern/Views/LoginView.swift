@@ -39,7 +39,6 @@ struct LoginView: View {
             }.foregroundColor(Color("Black"))
         }.edgesIgnoringSafeArea(.all)
         .onAppear { self.data.fetchGames() }
-
     }
 
     struct LoginView_Previews: PreviewProvider {
