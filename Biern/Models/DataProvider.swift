@@ -1,7 +1,7 @@
 import Foundation
 
 class DataProvider: ObservableObject {
-    @Published var games = [Game]()
+    @Published var games: [Game] = []
     @Published var party = Party()
     @Published var user = User()
     @Published var URL: String = "https://drinkapi.herokuapp.com/"
@@ -15,6 +15,48 @@ class DataProvider: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = httpMethod
         return request
+    }
+
+    func fetchGames() {
+        let gamesRequest = try? self.createRoute(endPoint: "game", httpMethod: "GET")
+        let session = URLSession.shared
+        let task = session.dataTask(with: gamesRequest!) { (data, _, error) in
+            // check if there were no errors
+            guard error == nil else {
+                print("Error: calling POST on /user")
+                return
+            }
+            // check if data was recieved
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            // parse the result as JSON
+            do {
+                guard let receivedGames = try JSONSerialization.jsonObject(with: responseData) as? NSArray else {
+                    print("Error: Could not get JSON from responseData as array")
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    for game in receivedGames {
+                        if let dict = game as? NSDictionary {
+                            // get values from dictionary
+                            let gameId = dict.value(forKey: "id")
+                            let name = dict.value(forKey: "name")
+                            let rules = dict.value(forKey: "rules")
+                            let game = Game(gameId: gameId, name: name, rules: rules)
+                            self.games.append(game)
+                        }
+                    }
+                }
+            } catch {
+                print("Error: parsing response from POST on /user")
+                return
+            }
+        }
+        task.resume()
+
     }
 
     func createUser() {
@@ -72,13 +114,12 @@ class DataProvider: ObservableObject {
                                        "users": [["id": self.user.userId,
                                                   "username": self.user.username,
                                                   "is_ready": self.user.isReady]],
-                                       "selected_games": [["name": self.party.selectedGames[0].name,
-                                                           "rules": self.party.selectedGames[0].rules]]
+                                       "selected_games": []
         ]
-        let jsonUser: Data
+        let jsonParty: Data
         do {
-            jsonUser = try JSONSerialization.data(withJSONObject: newParty)
-            createPartyRequest?.httpBody = jsonUser
+            jsonParty = try JSONSerialization.data(withJSONObject: newParty)
+            createPartyRequest?.httpBody = jsonParty
         } catch {
             print("Error: cannot create JSON from party")
             return
@@ -104,18 +145,42 @@ class DataProvider: ObservableObject {
                 guard let partyId = receivedParty["id"] as? String else {
                     return
                 }
-                // check if recieved object has id
                 guard let partyCode = receivedParty["party_code"] as? String else {
                     return
                 }
-                // check if recieved object has id
-                guard let partyUsers = receivedParty["users"] as? [User] else {
+                guard let partyUsers = receivedParty["users"] as? NSArray else {
+                    print("whoops")
+                    return
+                }
+                guard let partyGames = receivedParty["selected_games"] as? NSArray else {
+                    print("whoops")
                     return
                 }
                 DispatchQueue.main.async {
                     self.party.partyId = partyId
                     self.party.partyCode = partyCode
-                    self.party.users = partyUsers
+                    for user in partyUsers {
+                        if let dict = user as? NSDictionary {
+                            // get values from dictionary
+                            let userId = dict.value(forKey: "id")
+                            let username = dict.value(forKey: "username")
+                            let isReady = dict.value(forKey: "is_ready")
+                            // set the values on the user object
+                            self.user.userId = (userId as? String)!
+                            self.user.username = (username as? String)!
+                            self.user.isReady = (isReady != nil)
+                            // add user to the party
+                            self.party.users.append(self.user)
+                        }
+                    }
+                    print("yeeee")
+                    for game in partyGames {
+                        if let dict = game as? NSDictionary {
+                            let gameId = dict.value(forKey: "id")
+                            print(gameId)
+                        }
+                    }
+                    print("yeeee")
                 }
             } catch {
                 print("Error: parsing response from POST on /user")
@@ -124,5 +189,4 @@ class DataProvider: ObservableObject {
         }
         task.resume()
     }
-
 }

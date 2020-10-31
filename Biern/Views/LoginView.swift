@@ -38,6 +38,7 @@ struct LoginView: View {
                     .padding(.horizontal, 50.0)
             }.foregroundColor(Color("Black"))
         }.edgesIgnoringSafeArea(.all)
+        .onAppear { self.data.fetchGames() }
 
     }
 

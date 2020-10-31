@@ -6,7 +6,8 @@ class Game: ObservableObject {
     @Published var rules: String = ""
     @Published var selected: Bool = false
 
-    init(name: String, rules: String) {
+    init(gameId: String, name: String, rules: String) {
+        self.gameId = gameId
         self.name = name
         self.rules = rules
     }
