@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct WaitingView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // local variables
     @State var progressValue: Int = 0
     @State var timer: Timer?
     @State var isActive = false
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
 
     var body: some View {
@@ -24,8 +27,10 @@ struct WaitingView: View {
                 }.padding(.vertical, 70)
                 Spacer()
                 Text("Waiting for the next round to start...")
+                // display progress bar with progress value
                 ProgressBar(value: self.$progressValue)
-                NavigationLink(destination: GameView(color: Color("Green"), data: self.data), isActive: $isActive) {}
+                // when progressbar is full navigate to game view
+                NavigationLink(destination: GameView(data: self.data, color: Color("Green")), isActive: $isActive) {}
             }.onAppear(perform: {
                 startProgress()
             })
@@ -33,6 +38,7 @@ struct WaitingView: View {
         }
     }
 
+    // time for progress bar
     func startProgress() {
         self.timer = Timer.scheduledTimer(
             withTimeInterval: 1,

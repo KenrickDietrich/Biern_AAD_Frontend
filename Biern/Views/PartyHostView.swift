@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct PartyHostView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
     var body: some View {
         NavigationItemContainer {
@@ -24,6 +26,7 @@ struct PartyHostView: View {
                     PartyPeopleList(party: self.data.party)
                         .padding()
                     HStack {
+                        // navigate to select game view
                         NavigationLink(destination: ChooseGameView(data: self.data)) {
                             VStack {
                                 Image("games")
@@ -34,6 +37,7 @@ struct PartyHostView: View {
                             }.padding()
                         }
                         Spacer()
+                        // navigate to settings view
                         NavigationLink(destination:
                                         GameSettingsView(settings: self.data.party.settings, data: self.data)
                         ) {
@@ -46,6 +50,7 @@ struct PartyHostView: View {
                             }
                         }
                     }.frame(width: screenWidth * 0.6, height: screenHeight * 0.1, alignment: .center)
+                    // start game and navigate to waiting view
                     NavigationButton {
                         NavigationLink(destination: WaitingView(data: self.data)) {
                             Text("Start game")

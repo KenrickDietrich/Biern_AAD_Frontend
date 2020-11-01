@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct GameSettingsView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // Observed object recieved from parent
     @ObservedObject var settings: Settings
     @ObservedObject var data: DataProvider
+    // presentation mode to dismiss wrapped value
     @Environment(\.presentationMode) var presentationMode
+    // local variables
     @State var selected = 1
     @State var show = false
 
@@ -26,6 +30,7 @@ struct GameSettingsView: View {
                             Text("Determines the difficulty of the game")
                                 .font(/*@START_MENU_TOKEN@*/.callout/*@END_MENU_TOKEN@*/)
                             HStack {
+                                // show difficulty buttons in settings page
                                 DifficultyButtons(settings: self.settings,
                                                   selected: self.$selected,
                                                   show: self.$show)
@@ -34,6 +39,8 @@ struct GameSettingsView: View {
                         SettingsItem(settings: settings)
                     }.frame(width: screenWidth * 0.65, height: screenHeight * 0.5, alignment: .center)
                     .padding()
+                    // navigate back and save settings
+                    // send setsettings request to API
                     NavigationButton {
                         Button(action: {
                             self.data.party.settings.difficulty = self.selected

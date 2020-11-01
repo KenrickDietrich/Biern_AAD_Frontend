@@ -1,6 +1,8 @@
 import SwiftUI
 
+// background view for all views
 struct BackgroundCardComponent: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {

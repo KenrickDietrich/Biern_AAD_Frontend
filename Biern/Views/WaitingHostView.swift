@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct WaitingHostView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
@@ -9,6 +10,7 @@ struct WaitingHostView: View {
             VStack {
                 Text("The party is waiting for the next game")
                 NavigationButton {
+                    // navigate to next view
                     NavigationLink(destination: BackgroundCardComponent()) {
                         Text("Next game").fontWeight(.medium)
                     }

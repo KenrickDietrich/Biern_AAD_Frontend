@@ -1,5 +1,6 @@
 import SwiftUI
 
+// reusable button to keep styling consistant
 struct NavigationButton<Content>: View where Content: View {
     private let content: () -> Content
 

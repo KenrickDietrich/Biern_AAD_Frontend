@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct GameView: View {
-    @State var color: Color
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
+    // local variables
     @State var isActive = false
+    @State var color: Color
 
     var body: some View {
         ZStack {
@@ -13,6 +16,7 @@ struct GameView: View {
                 Image("crown")
                     .resizable()
                     .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
+                // navigate to party host view
                 NavigationLink(destination: PartyHostView(data: self.data), isActive: $isActive) {
                     Button(action: {
                         self.isActive = true
@@ -32,6 +36,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(color: Color("Green"), data: DataProvider())
+        GameView(data: DataProvider(), color: Color("Green"))
     }
 }

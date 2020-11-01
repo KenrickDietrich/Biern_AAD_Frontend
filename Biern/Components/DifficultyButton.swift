@@ -1,6 +1,8 @@
 import SwiftUI
 
+// difficulty buttons in setings screen
 struct DifficultyButtons: View {
+    // Observed object recieved from parent
     @ObservedObject var settings: Settings
     @Binding var selected: Int
     @Binding var show: Bool

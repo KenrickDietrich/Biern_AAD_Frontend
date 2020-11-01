@@ -1,9 +1,12 @@
 import SwiftUI
 
 struct ChooseGameView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
+    // presentation mode to dismiss wrapped value and navigate back
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationItemContainer {

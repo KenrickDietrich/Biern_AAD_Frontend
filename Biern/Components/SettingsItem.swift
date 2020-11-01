@@ -1,6 +1,8 @@
 import SwiftUI
 
+// single setting item with title, description and toggle button
 struct SettingsItem: View {
+    // Observed object recieved from parent
     @ObservedObject var settings: Settings
     var body: some View {
         HStack {

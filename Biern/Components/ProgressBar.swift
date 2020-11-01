@@ -1,7 +1,10 @@
 import SwiftUI
 
+// progress bar component
 struct ProgressBar: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
+    // binded value received from parent
     @Binding var value: Int
     var body: some View {
         ZStack(alignment: .leading) {

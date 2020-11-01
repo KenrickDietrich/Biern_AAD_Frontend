@@ -1,5 +1,6 @@
 import Foundation
 
+// user class with id, is ready and username that cannot be longer than 12 chars
 class User: ObservableObject {
     @Published var userId = ""
     @Published var isReady = false
