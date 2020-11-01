@@ -22,6 +22,7 @@ struct UserView: View {
                             NavigationLink(destination: PartyHostView(data: self.data)) {
                                 Text("Create game")
                                     .fontWeight(.medium)
+                                    .accessibilityIdentifier("createGameTextId")
                             }
                         }
                         NavigationButton {

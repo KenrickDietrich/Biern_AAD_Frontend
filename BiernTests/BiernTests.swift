@@ -1,4 +1,3 @@
-@testable import Biern
 import XCTest
 
 class BiernTests: XCTestCase {
