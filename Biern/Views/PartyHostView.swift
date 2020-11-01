@@ -47,7 +47,7 @@ struct PartyHostView: View {
                         }
                     }.frame(width: screenWidth * 0.6, height: screenHeight * 0.1, alignment: .center)
                     NavigationButton {
-                        NavigationLink(destination: GameView(color: Color("Green"))) {
+                        NavigationLink(destination: WaitingView(data: self.data)) {
                             Text("Start game")
                                 .fontWeight(.medium)
                         }

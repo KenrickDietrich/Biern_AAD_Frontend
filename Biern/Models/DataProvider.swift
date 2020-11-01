@@ -22,6 +22,8 @@ class DataProvider: ObservableObject {
     }
 
     func login() {
+        self.reason = ""
+        self.alert = false
         let loginRequest = try? self.createRoute(endPoint: "login", httpMethod: "POST")
         let session = URLSession.shared
         let task = session.dataTask(with: loginRequest!) { (data, _, _) in
