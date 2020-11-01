@@ -27,13 +27,11 @@ class DataProvider: ObservableObject {
         let task = session.dataTask(with: loginRequest!) { (data, _, _) in
             // check if data was recieved
             guard let responseData = data else {
-                print("Error: did not receive data")
                 return
             }
             // parse the result as JSON
             do {
                 guard let receivedToken = try JSONSerialization.jsonObject(with: responseData) as? NSDictionary else {
-                    print("Error: Could not get JSON from responseData as array")
                     return
                 }
                 DispatchQueue.main.async {
@@ -45,7 +43,6 @@ class DataProvider: ObservableObject {
                     }
                 }
             } catch {
-                print("Error: parsing response from POST on /user")
                 return
             }
         }
@@ -59,13 +56,11 @@ class DataProvider: ObservableObject {
         let task = session.dataTask(with: gamesRequest!) { (data, _, _) in
             // check if data was recieved
             guard let responseData = data else {
-                print("Error: did not receive data")
                 return
             }
             // parse the result as JSON
             do {
                 guard let receivedGames = try JSONSerialization.jsonObject(with: responseData) as? NSArray else {
-                    print("Error: Could not get JSON from responseData as array")
                     return
                 }
                 DispatchQueue.main.async {
@@ -80,7 +75,6 @@ class DataProvider: ObservableObject {
                     }
                 }
             } catch {
-                print("Error: parsing response from POST on /user")
                 return
             }
         }
@@ -105,13 +99,11 @@ class DataProvider: ObservableObject {
         let task = session.dataTask(with: createUserRequest!) { (data, _, _) in
             // check if data was recieved
             guard let responseData = data else {
-                print("Error: did not receive data")
                 return
             }
             // parse the result as JSON
             do {
                 guard let receivedUser = try JSONSerialization.jsonObject(with: responseData) as? [String: Any] else {
-                    print("Error: Could not get JSON from responseData as dictionary")
                     return
                 }
                 // check if recieved object has id
@@ -123,7 +115,6 @@ class DataProvider: ObservableObject {
                     self.user.userId = userId
                 }
             } catch {
-                print("Error: parsing response from POST on /user")
                 return
             }
         }
@@ -156,13 +147,11 @@ class DataProvider: ObservableObject {
         let session = URLSession.shared
         let task = session.dataTask(with: createPartyRequest!) { (data, _, _) in
             guard let responseData = data else {
-                print("Error: did not receive data")
                 return
             }
             // parse the result as JSON
             do {
                 guard let receivedParty = try JSONSerialization.jsonObject(with: responseData) as? [String: Any] else {
-                    print("Error: Could not get JSON from responseData as dictionary")
                     return
                 }
                 // check if recieved object has id
@@ -230,7 +219,6 @@ class DataProvider: ObservableObject {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, _, _) in
             guard data != nil else {
-                print("Error: did not receive data")
                 return
             }
         }
@@ -258,11 +246,9 @@ class DataProvider: ObservableObject {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
-                print("Error: calling POST on set settings")
                 return
             }
             guard data != nil else {
-                print("Error: did not receive data")
                 return
             }
         }
