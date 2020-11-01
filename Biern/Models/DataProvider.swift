@@ -6,7 +6,7 @@ class DataProvider: ObservableObject {
     @Published var user = User()
     @Published var URL: String = "https://drinkapi.herokuapp.com/"
 
-    // creates a route to api
+    // creates routes to api
     func createRoute(endPoint: String, httpMethod: String) throws -> URLRequest {
         guard let url = Foundation.URL(string: self.URL + endPoint) else {
             throw HTTPError.cantCreateRoute
@@ -17,6 +17,7 @@ class DataProvider: ObservableObject {
         return request
     }
 
+    // fetch all games
     func fetchGames() {
         let gamesRequest = try? self.createRoute(endPoint: "game", httpMethod: "GET")
         let session = URLSession.shared
@@ -37,17 +38,18 @@ class DataProvider: ObservableObject {
                     print("Error: Could not get JSON from responseData as array")
                     return
                 }
-
                 DispatchQueue.main.async {
                     for game in receivedGames {
                         if let dict = game as? NSDictionary {
                             // get values from dictionary
-                            let gameId = dict.value(forKey: "id")
-                            let name = dict.value(forKey: "name")
-                            let rules = dict.value(forKey: "rules")
-                            let game = Game(gameId: gameId, name: name, rules: rules)
-                            self.games.append(game)
+                            let gameId = (dict.value(forKey: "id") as? String)!
+                            let name = (dict.value(forKey: "name") as? String)!
+                            let rules = (dict.value(forKey: "rules") as? String)!
+                            self.games.append(Game(gameId: gameId, name: name, rules: rules))
                         }
+                    }
+                    for game in self.games {
+                        print("ALL games: ", game.name)
                     }
                 }
             } catch {
@@ -56,20 +58,23 @@ class DataProvider: ObservableObject {
             }
         }
         task.resume()
-
     }
 
+    // create user
     func createUser() {
+        // create a post request with endpoint user
         var createUserRequest = try? self.createRoute(endPoint: "user", httpMethod: "POST")
+        // create the user object
         let newUser: [String: Any] = ["username": self.user.username, "is_ready": false]
-        let jsonUser: Data
+        
+        // serialize the user object and add it to body
         do {
-            jsonUser = try JSONSerialization.data(withJSONObject: newUser, options: [])
+            let jsonUser: Data = try JSONSerialization.data(withJSONObject: newUser, options: [])
             createUserRequest?.httpBody = jsonUser
         } catch {
-            print("Error: cannot create JSON from user")
             return
         }
+        // create session and send request
         let session = URLSession.shared
         let task = session.dataTask(with: createUserRequest!) { (data, _, error) in
             // check if there were no errors
@@ -92,8 +97,8 @@ class DataProvider: ObservableObject {
                 guard let userId = receivedUser["id"] as? String else {
                     return
                 }
+                // set new user id of user
                 DispatchQueue.main.async {
-                    // set new user id of user
                     self.user.userId = userId
                 }
             } catch {
@@ -104,8 +109,11 @@ class DataProvider: ObservableObject {
         task.resume()
     }
 
+    // create party
     func createParty() {
+        // create a post request with endpoint party
         var createPartyRequest = try? self.createRoute(endPoint: "party", httpMethod: "POST")
+        // create the party object
         let newParty: [String: Any] = ["host_id": self.user.userId,
                                        "party_code": self.party.partyCode,
                                        "is_active": self.party.isActive,
@@ -116,14 +124,14 @@ class DataProvider: ObservableObject {
                                                   "is_ready": self.user.isReady]],
                                        "selected_games": []
         ]
-        let jsonParty: Data
+        // serialize the party object and add it to body
         do {
-            jsonParty = try JSONSerialization.data(withJSONObject: newParty)
+            let jsonParty: Data = try JSONSerialization.data(withJSONObject: newParty)
             createPartyRequest?.httpBody = jsonParty
         } catch {
-            print("Error: cannot create JSON from party")
             return
         }
+        // create session and send request
         let session = URLSession.shared
         let task = session.dataTask(with: createPartyRequest!) { (data, _, error) in
             guard error == nil else {
@@ -134,7 +142,6 @@ class DataProvider: ObservableObject {
                 print("Error: did not receive data")
                 return
             }
-
             // parse the result as JSON
             do {
                 guard let receivedParty = try JSONSerialization.jsonObject(with: responseData) as? [String: Any] else {
@@ -145,17 +152,15 @@ class DataProvider: ObservableObject {
                 guard let partyId = receivedParty["id"] as? String else {
                     return
                 }
+                // check if recieved object has party code
                 guard let partyCode = receivedParty["party_code"] as? String else {
                     return
                 }
+                // check if recieved object has users
                 guard let partyUsers = receivedParty["users"] as? NSArray else {
-                    print("whoops")
                     return
                 }
-                guard let partyGames = receivedParty["selected_games"] as? NSArray else {
-                    print("whoops")
-                    return
-                }
+                // set data from the response in party
                 DispatchQueue.main.async {
                     self.party.partyId = partyId
                     self.party.partyCode = partyCode
@@ -173,17 +178,8 @@ class DataProvider: ObservableObject {
                             self.party.users.append(self.user)
                         }
                     }
-                    print("yeeee")
-                    for game in partyGames {
-                        if let dict = game as? NSDictionary {
-                            let gameId = dict.value(forKey: "id")
-                            print(gameId)
-                        }
-                    }
-                    print("yeeee")
                 }
             } catch {
-                print("Error: parsing response from POST on /user")
                 return
             }
         }
