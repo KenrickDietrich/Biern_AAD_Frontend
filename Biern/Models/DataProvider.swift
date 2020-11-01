@@ -48,9 +48,6 @@ class DataProvider: ObservableObject {
                             self.games.append(Game(gameId: gameId, name: name, rules: rules))
                         }
                     }
-                    for game in self.games {
-                        print("ALL games: ", game.name)
-                    }
                 }
             } catch {
                 print("Error: parsing response from POST on /user")
