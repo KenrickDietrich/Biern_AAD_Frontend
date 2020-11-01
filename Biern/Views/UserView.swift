@@ -26,6 +26,7 @@ struct UserView: View {
                                 }, label: {
                                     Text("Create game")
                                         .fontWeight(.medium)
+                                        .accessibilityIdentifier("createGameTextId")
                                 })
                             }
                         }

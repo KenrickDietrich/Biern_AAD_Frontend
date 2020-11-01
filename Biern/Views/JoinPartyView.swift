@@ -6,7 +6,7 @@ struct JoinPartyView: View {
     @ObservedObject var data: DataProvider
     @State var input = ""
     @State var isActive = false
-
+    @State var showAlert = false
     var body: some View {
         NavigationItemContainer {
             ZStack {
@@ -24,7 +24,11 @@ struct JoinPartyView: View {
                                    isActive: $isActive) {
                         NavigationButton {
                             Button(action: {
-                                self.isActive = true
+                                if self.input.count != 0 {
+                                    self.isActive = true
+                                } else {
+                                    self.showAlert = true
+                                }
                             }, label: {
                                 Text("Join game")
                                     .fontWeight(.medium)
@@ -39,6 +43,9 @@ struct JoinPartyView: View {
                         .padding(.horizontal, 50.0)
 
                 }.foregroundColor(Color("Black"))
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("Try again"), message: Text("Please enter a party code and try again!"))
+                })
             }.edgesIgnoringSafeArea(.all)
         }
     }

@@ -6,6 +6,7 @@ struct LoginView: View {
     @ObservedObject var data: DataProvider
     @State var input = ""
     @State var isActive = false
+    @State var showAlert = false
     var body: some View {
         ZStack {
             BackgroundCardComponent()
@@ -15,6 +16,7 @@ struct LoginView: View {
                 VStack {
                     Text("Username:")
                     TextField("", text: self.$input)
+                        .accessibilityIdentifier("usernameTextField")
                         .padding(5.0)
                         .background(Color("Grey"))
                         .cornerRadius(12)
@@ -24,9 +26,13 @@ struct LoginView: View {
                                isActive: $isActive) {
                     NavigationButton {
                         Button(action: {
-                            self.data.user.username = self.input
-                            self.data.createUser()
-                            self.isActive = true
+                            if self.input.count != 0 {
+                                self.userData.username = self.input
+                                self.userData.createUser()
+                                self.isActive = true
+                            } else {
+                                self.showAlert = true
+                            }
                         }, label: {
                             Text("Next")
                                 .fontWeight(.medium)
@@ -37,6 +43,9 @@ struct LoginView: View {
                     .font(.footnote)
                     .padding(.horizontal, 50.0)
             }.foregroundColor(Color("Black"))
+            .alert(isPresented: $showAlert, content: {
+                Alert(title: Text("Try again"), message: Text("Please enter a username and try again!"))
+            })
         }.edgesIgnoringSafeArea(.all)
         .onAppear { self.data.fetchGames() }
     }
