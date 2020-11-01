@@ -3,38 +3,43 @@ import SwiftUI
 struct UserView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var userData: User
     @ObservedObject var data: DataProvider
-
+    @State var isActive = false
     var body: some View {
         NavigationItemContainer {
             ZStack {
                 BackgroundCardComponent()
                 VStack(spacing: 30) {
                     HStack {
-                        Text("Hallo, " + "\(self.userData.username)")
+                        Text("Hallo, " + "\(self.data.user.username)")
                             .font(.title)
                     }
                     .padding(5.0)
                     .frame(width: screenWidth * 0.6)
                     HStack {
-                        NavigationButton {
-                            NavigationLink(destination: PartyHostView(data: self.data)) {
-                                Text("Create game")
-                                    .fontWeight(.medium)
-                                    .accessibilityIdentifier("createGameTextId")
+                        NavigationLink(destination: PartyHostView(data: self.data),
+                        isActive: $isActive) {
+                            NavigationButton {
+                                Button(action: {
+                                    self.data.createParty()
+                                    self.isActive = true
+                                }, label: {
+                                    Text("Create game")
+                                        .fontWeight(.medium)
+                                        .accessibilityIdentifier("createGameTextId")
+                                })
                             }
                         }
                         NavigationButton {
-                            NavigationLink(destination: JoinPartyView(data: self.data, userData: self.userData)) {
+                            NavigationLink(destination: JoinPartyView(data: self.data)) {
                                 Text("Join game")
                                     .fontWeight(.medium)
                             }
                         }
                     }
                     Text("Choose if you want to join a game or create one.")
-                        .font(.footnote)
-                        .padding(.horizontal, 80.0)
+                    .font(.footnote)
+                    .padding(.horizontal, 80.0)
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
         }
@@ -43,6 +48,6 @@ struct UserView: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(userData: User(), data: DataProvider())
+        UserView(data: DataProvider())
     }
 }

@@ -30,10 +30,7 @@ struct GameSettingsView: View {
                                                   show: self.$show)
                             }
                         }
-                        ForEach(self.settings.settings, id: \.settingId) { setting in
-                            SettingsItem(setting: setting)
-                                .padding()
-                        }
+                        SettingsItem(settings: settings)
                     }.frame(width: screenWidth * 0.65, height: screenHeight * 0.5, alignment: .center)
                     .padding()
                     NavigationButton {

@@ -1,12 +1,13 @@
 import UIKit
 
 class Game: ObservableObject {
-    @Published var gameId = UUID()
+    @Published var gameId: String = ""
     @Published var name: String = ""
     @Published var rules: String = ""
     @Published var selected: Bool = false
 
-    init(name: String, rules: String) {
+    init(gameId: String, name: String, rules: String) {
+        self.gameId = gameId
         self.name = name
         self.rules = rules
     }

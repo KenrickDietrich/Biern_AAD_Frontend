@@ -1,12 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var userData = User()
     @StateObject var data = DataProvider()
 
     var body: some View {
         NavigationView {
-            LoginView(userData: self.userData, data: self.data)
+            LoginView(data: self.data)
         }
     }
 }

@@ -50,6 +50,6 @@ struct GameListItem: View {
 
 struct GameListItem_Previews: PreviewProvider {
     static var previews: some View {
-        GameListItem(game: Game(name: "Cool game", rules: "multiple rules"))
+        GameListItem(game: Game(gameId: "1", name: "Cool game", rules: "multiple rules"))
     }
 }

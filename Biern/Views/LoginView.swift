@@ -3,7 +3,6 @@ import SwiftUI
 struct LoginView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    @ObservedObject var userData: User
     @ObservedObject var data: DataProvider
     @State var input = ""
     @State var isActive = false
@@ -23,7 +22,7 @@ struct LoginView: View {
                         .cornerRadius(12)
                         .frame(width: screenWidth * 0.6)
                 }
-                NavigationLink(destination: UserView(userData: self.userData, data: self.data),
+                NavigationLink(destination: UserView(data: self.data),
                                isActive: $isActive) {
                     NavigationButton {
                         Button(action: {
@@ -48,12 +47,12 @@ struct LoginView: View {
                 Alert(title: Text("Try again"), message: Text("Please enter a username and try again!"))
             })
         }.edgesIgnoringSafeArea(.all)
-
+        .onAppear { self.data.fetchGames() }
     }
 
     struct LoginView_Previews: PreviewProvider {
         static var previews: some View {
-            LoginView(userData: User(), data: DataProvider())
+            LoginView(data: DataProvider())
         }
     }
 }
