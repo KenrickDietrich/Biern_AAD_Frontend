@@ -24,6 +24,7 @@ struct ChooseGameView: View {
                     }.frame(width: screenWidth, height: screenHeight * 0.5)
                     NavigationButton {
                         Button(action: {
+                            self.data.setSelectedGames()
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("Save")

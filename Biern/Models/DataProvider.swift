@@ -63,7 +63,6 @@ class DataProvider: ObservableObject {
         var createUserRequest = try? self.createRoute(endPoint: "user", httpMethod: "POST")
         // create the user object
         let newUser: [String: Any] = ["username": self.user.username, "is_ready": false]
-        
         // serialize the user object and add it to body
         do {
             let jsonUser: Data = try JSONSerialization.data(withJSONObject: newUser, options: [])
@@ -172,7 +171,7 @@ class DataProvider: ObservableObject {
                             self.user.username = (username as? String)!
                             self.user.isReady = (isReady != nil)
                             // add user to the party
-                            self.party.users.append(self.user)
+                            self.party.users = [self.user]
                         }
                     }
                 }
@@ -181,5 +180,40 @@ class DataProvider: ObservableObject {
             }
         }
         task.resume()
+    }
+
+    func setSelectedGames() {
+        // create a post request with endpoint party
+        var createSelectedGamesRequest = try? self.createRoute(endPoint: "party", httpMethod: "POST")
+        // create the party object
+        var selectedGames: [String: Any] = [:]
+        if !self.party.selectedGames.isEmpty {
+        selectedGames = ["selected_games": ["id": self.party.selectedGames[0].gameId,
+                                                               "name": self.party.selectedGames[0].name,
+                                                               "rules": self.party.selectedGames[0].name]]
+        } else {
+           selectedGames = ["selected_games": []]
+        }
+        // serialize the party object and add it to body
+        do {
+            let jsonSelectedGames: Data = try JSONSerialization.data(withJSONObject: selectedGames)
+            createSelectedGamesRequest?.httpBody = jsonSelectedGames
+        } catch {
+            return
+        }
+        // create session and send request
+        let session = URLSession.shared
+        let task = session.dataTask(with: createSelectedGamesRequest!) { (data, _, error) in
+            guard error == nil else {
+                print("Error: calling POST on /party")
+                return
+            }
+            guard data != nil else {
+                print("Error: did not receive data")
+                return
+            }
+        }
+        task.resume()
+
     }
 }
