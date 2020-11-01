@@ -4,7 +4,6 @@ struct JoinPartyView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var data: DataProvider
-    @ObservedObject var userData: User
     @State var input = ""
     @State var isActive = false
 
@@ -21,7 +20,7 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
-                    NavigationLink(destination: PartyUserView(data: self.data, userData: self.userData),
+                    NavigationLink(destination: PartyUserView(data: self.data),
                                    isActive: $isActive) {
                         NavigationButton {
                             Button(action: {
@@ -47,6 +46,6 @@ struct JoinPartyView: View {
 
 struct JoinPartyView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinPartyView(data: DataProvider(), userData: User())
+        JoinPartyView(data: DataProvider())
     }
 }

@@ -1,26 +1,26 @@
 import SwiftUI
 
 struct SettingsItem: View {
-    @ObservedObject var setting: Setting
+    @ObservedObject var settings: Settings
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(self.setting.title)
+                Text("Show names")
                     .fontWeight(.bold)
-                Text(self.setting.description)
+                Text("Determines whether the usernames get shown during the game")
                     .font(/*@START_MENU_TOKEN@*/.callout/*@END_MENU_TOKEN@*/)
                     .multilineTextAlignment(.leading)
             }
             Spacer()
-            if self.setting.isActive == true {
+            if self.settings.showNames == true {
                 Button(action: {
-                        self.setting.isActive.toggle()
+                        self.settings.showNames.toggle()
                 }, label: {
                     Image("toggle-active").animation(.spring())
                 })
             } else {
                 Button(action: {
-                        self.setting.isActive.toggle()
+                        self.settings.showNames.toggle()
                 }, label: {
                     Image("toggle").animation(.spring())
                 })
@@ -32,9 +32,6 @@ struct SettingsItem: View {
 
 struct SettingsItem_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsItem(setting: Setting(title: "Drinking game",
-                                      description:
-                                        "Determines whether the game you play is a drinking game",
-                                      isActive: true))
+        SettingsItem(settings: Settings())
     }
 }
