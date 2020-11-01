@@ -18,7 +18,7 @@ struct UserView: View {
                     .frame(width: screenWidth * 0.6)
                     HStack {
                         NavigationLink(destination: PartyHostView(data: self.data),
-                        isActive: $isActive) {
+                                       isActive: $isActive) {
                             NavigationButton {
                                 Button(action: {
                                     self.data.createParty()
@@ -38,10 +38,11 @@ struct UserView: View {
                         }
                     }
                     Text("Choose if you want to join a game or create one.")
-                    .font(.footnote)
-                    .padding(.horizontal, 80.0)
+                        .font(.footnote)
+                        .padding(.horizontal, 80.0)
                 }.foregroundColor(Color("Black"))
             }.edgesIgnoringSafeArea(.all)
+            .onAppear { self.data.fetchGames() }
         }
     }
 }

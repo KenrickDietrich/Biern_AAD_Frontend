@@ -34,7 +34,9 @@ struct PartyHostView: View {
                             }.padding()
                         }
                         Spacer()
-                        NavigationLink(destination: GameSettingsView(settings: self.data.party.settings)) {
+                        NavigationLink(destination:
+                                        GameSettingsView(settings: self.data.party.settings, data: self.data)
+                        ) {
                             VStack {
                                 Image("stopwatch")
                                 Text("Game settings")
@@ -45,7 +47,7 @@ struct PartyHostView: View {
                         }
                     }.frame(width: screenWidth * 0.6, height: screenHeight * 0.1, alignment: .center)
                     NavigationButton {
-                        NavigationLink(destination: GameView(color: Color("Green"))) {
+                        NavigationLink(destination: WaitingView(data: self.data)) {
                             Text("Start game")
                                 .fontWeight(.medium)
                         }

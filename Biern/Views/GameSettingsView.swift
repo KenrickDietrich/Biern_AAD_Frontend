@@ -4,6 +4,7 @@ struct GameSettingsView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     @ObservedObject var settings: Settings
+    @ObservedObject var data: DataProvider
     @Environment(\.presentationMode) var presentationMode
     @State var selected = 1
     @State var show = false
@@ -35,7 +36,9 @@ struct GameSettingsView: View {
                     .padding()
                     NavigationButton {
                         Button(action: {
-                            self.settings.difficulty = self.selected
+                            self.data.party.settings.difficulty = self.selected
+                            self.data.party.settings.showNames = self.show
+                            self.data.setSettings()
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("Save")
@@ -45,7 +48,8 @@ struct GameSettingsView: View {
                 }
             }.edgesIgnoringSafeArea(.all)
             .onAppear(perform: {
-                self.selected = self.settings.difficulty
+                self.selected = self.data.party.settings.difficulty
+                self.show = self.data.party.settings.showNames
             })
         }
     }
@@ -53,6 +57,6 @@ struct GameSettingsView: View {
 
 struct GameSettingsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GameSettingsView(settings: Settings())
+        GameSettingsView(settings: Settings(), data: DataProvider())
     }
 }

@@ -6,6 +6,7 @@ struct WaitingView: View {
     @State var progressValue: Int = 0
     @State var timer: Timer?
     @State var isActive = false
+    @ObservedObject var data: DataProvider
 
     var body: some View {
         NavigationItemContainer {
@@ -24,8 +25,7 @@ struct WaitingView: View {
                 Spacer()
                 Text("Waiting for the next round to start...")
                 ProgressBar(value: self.$progressValue)
-                NavigationLink(destination: GameView(color: Color("Green")), isActive: $isActive) {}
-
+                NavigationLink(destination: GameView(color: Color("Green"), data: self.data), isActive: $isActive) {}
             }.onAppear(perform: {
                 startProgress()
             })
@@ -50,6 +50,6 @@ struct WaitingView: View {
 
 struct WaitingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WaitingView()
+        WaitingView(data: DataProvider())
     }
 }
