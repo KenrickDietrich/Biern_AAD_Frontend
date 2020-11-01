@@ -30,7 +30,11 @@ struct LoginView: View {
                         }, label: {
                             Text("Next")
                                 .fontWeight(.medium)
-                        })
+                        }).alert(isPresented: self.$data.alert) {
+                            Alert(title: Text("Something went wrong"),
+                                  message: Text("Try again later, ERROR: \(self.data.reason)"),
+                                  dismissButton: .default(Text("OK")))
+                        }
                     }
                 }
                 Text("Please enter an username, you can change this name later.")
@@ -38,7 +42,6 @@ struct LoginView: View {
                     .padding(.horizontal, 50.0)
             }.foregroundColor(Color("Black"))
         }.edgesIgnoringSafeArea(.all)
-        .onAppear { self.data.fetchGames() }
     }
 
     struct LoginView_Previews: PreviewProvider {

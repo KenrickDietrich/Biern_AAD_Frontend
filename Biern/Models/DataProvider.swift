@@ -5,6 +5,9 @@ class DataProvider: ObservableObject {
     @Published var party = Party()
     @Published var user = User()
     @Published var URL: String = "https://drinkapi.herokuapp.com/"
+    @Published var token = ""
+    @Published var alert = false
+    @Published var reason = ""
 
     // creates routes to api
     func createRoute(endPoint: String, httpMethod: String) throws -> URLRequest {
@@ -14,19 +17,46 @@ class DataProvider: ObservableObject {
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = httpMethod
+        request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
         return request
+    }
+
+    func login() {
+        let loginRequest = try? self.createRoute(endPoint: "login", httpMethod: "POST")
+        let session = URLSession.shared
+        let task = session.dataTask(with: loginRequest!) { (data, _, _) in
+            // check if data was recieved
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            // parse the result as JSON
+            do {
+                guard let receivedToken = try JSONSerialization.jsonObject(with: responseData) as? NSDictionary else {
+                    print("Error: Could not get JSON from responseData as array")
+                    return
+                }
+                DispatchQueue.main.async {
+                    if receivedToken.value(forKey: "reason") != nil {
+                        self.reason = (receivedToken.value(forKey: "reason") as? String)!
+                        self.alert = true
+                    } else {
+                        self.token = (receivedToken.value(forKey: "token") as? String)!
+                    }
+                }
+            } catch {
+                print("Error: parsing response from POST on /user")
+                return
+            }
+        }
+        task.resume()
     }
 
     // fetch all games
     func fetchGames() {
         let gamesRequest = try? self.createRoute(endPoint: "game", httpMethod: "GET")
         let session = URLSession.shared
-        let task = session.dataTask(with: gamesRequest!) { (data, _, error) in
-            // check if there were no errors
-            guard error == nil else {
-                print("Error: calling POST on /user")
-                return
-            }
+        let task = session.dataTask(with: gamesRequest!) { (data, _, _) in
             // check if data was recieved
             guard let responseData = data else {
                 print("Error: did not receive data")
@@ -72,12 +102,7 @@ class DataProvider: ObservableObject {
         }
         // create session and send request
         let session = URLSession.shared
-        let task = session.dataTask(with: createUserRequest!) { (data, _, error) in
-            // check if there were no errors
-            guard error == nil else {
-                print("Error: calling POST on /user")
-                return
-            }
+        let task = session.dataTask(with: createUserRequest!) { (data, _, _) in
             // check if data was recieved
             guard let responseData = data else {
                 print("Error: did not receive data")
@@ -129,11 +154,7 @@ class DataProvider: ObservableObject {
         }
         // create session and send request
         let session = URLSession.shared
-        let task = session.dataTask(with: createPartyRequest!) { (data, _, error) in
-            guard error == nil else {
-                print("Error: calling POST on /party")
-                return
-            }
+        let task = session.dataTask(with: createPartyRequest!) { (data, _, _) in
             guard let responseData = data else {
                 print("Error: did not receive data")
                 return
@@ -184,28 +205,63 @@ class DataProvider: ObservableObject {
 
     func setSelectedGames() {
         // create a post request with endpoint party
-        var createSelectedGamesRequest = try? self.createRoute(endPoint: "party", httpMethod: "POST")
+        guard let url = Foundation.URL(string: self.URL + "party/" + self.party.partyId + "/games") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
         // create the party object
         var selectedGames: [String: Any] = [:]
         if !self.party.selectedGames.isEmpty {
-        selectedGames = ["selected_games": ["id": self.party.selectedGames[0].gameId,
-                                                               "name": self.party.selectedGames[0].name,
-                                                               "rules": self.party.selectedGames[0].name]]
+            selectedGames = ["selected_games": ["id": self.party.selectedGames[0].gameId,
+                                                "name": self.party.selectedGames[0].name,
+                                                "rules": self.party.selectedGames[0].name]]
         } else {
-           selectedGames = ["selected_games": []]
+            selectedGames = ["selected_games": []]
         }
+        print(selectedGames)
         // serialize the party object and add it to body
         do {
             let jsonSelectedGames: Data = try JSONSerialization.data(withJSONObject: selectedGames)
-            createSelectedGamesRequest?.httpBody = jsonSelectedGames
+            request.httpBody = jsonSelectedGames
         } catch {
             return
         }
         // create session and send request
         let session = URLSession.shared
-        let task = session.dataTask(with: createSelectedGamesRequest!) { (data, _, error) in
+        let task = session.dataTask(with: request) { (data, _, _) in
+            guard data != nil else {
+                print("Error: did not receive data")
+                return
+            }
+        }
+        task.resume()
+    }
+
+    func setSettings() {
+        // create a post request with endpoint party
+        guard let url = Foundation.URL(string: self.URL + "party/" + self.party.partyId + "/setting") else { return }
+        print(url)
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(self.token)", forHTTPHeaderField: "Authorization")
+        // create the setting object
+        let settings: [String: Any] = ["difficulty": self.party.settings.difficulty,
+                                       "show_names": self.party.settings.showNames]
+        print(settings)
+        // serialize the setting object and add it to body
+        do {
+            let jsonSettings: Data = try JSONSerialization.data(withJSONObject: settings)
+            request.httpBody = jsonSettings
+        } catch {
+            return
+        }
+        // create session and send request
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, _, error) in
             guard error == nil else {
-                print("Error: calling POST on /party")
+                print("Error: calling POST on set settings")
                 return
             }
             guard data != nil else {
@@ -214,6 +270,5 @@ class DataProvider: ObservableObject {
             }
         }
         task.resume()
-
     }
 }

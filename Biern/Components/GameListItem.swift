@@ -23,7 +23,7 @@ struct GameListItem: View {
                 ZStack {
                     Rectangle()
                         .fill(Color("Green").opacity(0.5))
-                        .frame(width: screenWidth * 0.4, height: screenWidth * 0.4)
+                        .frame(width: screenWidth * 0.5, height: screenWidth * 0.4)
                         .cornerRadius(25)
                     Image("check")
                         .resizable()

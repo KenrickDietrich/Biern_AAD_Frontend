@@ -6,7 +6,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             LoginView(data: self.data)
-        }
+        }.onAppear { self.data.login() }
     }
 }
 struct ContentView_Previews: PreviewProvider {
