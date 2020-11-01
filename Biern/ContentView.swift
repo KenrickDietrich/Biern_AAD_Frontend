@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    // initialize global data provider
     @StateObject var data = DataProvider()
 
+    // on appear fetch auth token
+    // navigate to first view login
     var body: some View {
         NavigationView {
             LoginView(data: self.data)

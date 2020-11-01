@@ -1,9 +1,12 @@
 import SwiftUI
 
 struct UserView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
+    // local variable
     @State var isActive = false
     var body: some View {
         NavigationItemContainer {
@@ -17,10 +20,12 @@ struct UserView: View {
                     .padding(5.0)
                     .frame(width: screenWidth * 0.6)
                     HStack {
+                        // navigate to party host view
                         NavigationLink(destination: PartyHostView(data: self.data),
                                        isActive: $isActive) {
                             NavigationButton {
                                 Button(action: {
+                                    // call create party request
                                     self.data.createParty()
                                     self.isActive = true
                                 }, label: {

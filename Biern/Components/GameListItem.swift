@@ -1,10 +1,14 @@
 import SwiftUI
 
+// list items that show available games
 struct GameListItem: View {
+    // Observed object recieved from parent
     @ObservedObject var game: Game
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var body: some View {
+        // is the game is selected show a green overlay
         if game.selected {
             VStack {
                 Image("game")
@@ -30,7 +34,9 @@ struct GameListItem: View {
                         .frame(width: 150, height: 150)
                 }
             )
-        } else {
+        }
+        // else show game normally
+        else {
             VStack {
                 Image("game")
                     .resizable()

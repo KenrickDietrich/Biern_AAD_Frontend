@@ -1,9 +1,12 @@
 import SwiftUI
 
 struct JoinPartyView: View {
+    // get screen size
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    // global data provider recieved from parent
     @ObservedObject var data: DataProvider
+    // local variables
     @State var input = ""
     @State var isActive = false
     @State var showAlert = false
@@ -20,13 +23,18 @@ struct JoinPartyView: View {
                             .cornerRadius(12)
                             .frame(width: screenWidth * 0.6)
                     }
+                    // navigate to party user view
                     NavigationLink(destination: PartyUserView(data: self.data),
                                    isActive: $isActive) {
                         NavigationButton {
                             Button(action: {
+                                // check if input is not empty
+                                // continue to next view
                                 if self.input.count != 0 {
                                     self.isActive = true
-                                } else {
+                                }
+                                // if not show alert
+                                else {
                                     self.showAlert = true
                                 }
                             }, label: {
