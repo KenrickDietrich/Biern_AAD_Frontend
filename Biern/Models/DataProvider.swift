@@ -219,7 +219,6 @@ class DataProvider: ObservableObject {
         } else {
             selectedGames = ["selected_games": []]
         }
-        print(selectedGames)
         // serialize the party object and add it to body
         do {
             let jsonSelectedGames: Data = try JSONSerialization.data(withJSONObject: selectedGames)
@@ -241,7 +240,6 @@ class DataProvider: ObservableObject {
     func setSettings() {
         // create a post request with endpoint party
         guard let url = Foundation.URL(string: self.URL + "party/" + self.party.partyId + "/setting") else { return }
-        print(url)
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -249,7 +247,6 @@ class DataProvider: ObservableObject {
         // create the setting object
         let settings: [String: Any] = ["difficulty": self.party.settings.difficulty,
                                        "show_names": self.party.settings.showNames]
-        print(settings)
         // serialize the setting object and add it to body
         do {
             let jsonSettings: Data = try JSONSerialization.data(withJSONObject: settings)
